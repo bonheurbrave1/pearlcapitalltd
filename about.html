@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="About Pearl Capital Ltd — Learn about our mission, values, and commitment to responsible micro-lending in Rwanda. Discover our story and leadership team." />
+    <title>About Us | Pearl Capital Ltd</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JS (deferred) -->
+    <script defer src="js/script.js"></script>
+
+    <style>
+        /* ABOUT PAGE SPECIFIC STYLES */
+
+        .about-hero {
+            background: linear-gradient(135deg, rgba(0, 86, 163, 0.92), rgba(26, 43, 60, 0.88)),
+                url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-hero .lead {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .mission-values {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .mission-content h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .value-card h4 {
+            margin: 0 0 10px;
+            color: var(--primary);
+        }
+
+        .story-section {
+            padding: 80px 0;
+        }
+
+        .story-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #fff;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #fff;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .team-preview {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-img {
+            height: 250px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 4rem;
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-info h4 {
+            margin: 0 0 5px;
+            color: var(--primary);
+        }
+
+        .team-info .position {
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .team-info p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .stats-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #fff;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .governance {
+            padding: 80px 0;
+        }
+
+        .governance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .governance-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .governance-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .governance-card h3 i {
+            color: var(--accent);
+        }
+
+        .governance-card ul {
+            padding-left: 20px;
+        }
+
+        .governance-card li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .governance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero .lead {
+                font-size: 1.1rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+                border-right: 10px solid #fff;
+                border-left: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Pearl Capital home">
+                <img src="logo.png" alt="logo.png" width="65">
+                <span class="brand-text">Pearl <strong>Capital</strong></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><i
+                        class="fas fa-bars"></i></button>
+                <ul class="nav-list" role="menubar">
+                    <li role="none"><a role="menuitem" class="nav-link" href="index.html">Home</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link active" href="about.html">About</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="services.html">Services</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="ourteam.html">Our Team</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
+                    <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="contact.html">Apply Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Empowering Rwanda Through Responsible Finance</h1>
+            <p class="lead">Pearl Capital Ltd is a micro-lending institution dedicated to fueling economic growth by
+                providing tailored financial solutions to SMEs, salaried individuals, and farmers across Rwanda.</p>
+            <a class="btn btn-primary" href="#mission">Our Mission</a>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="mission-values" id="mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-content">
+                    <h2>Our Mission & Vision</h2>
+                    <p>At Pearl Capital, our mission is to provide accessible, transparent, and responsible financial
+                        services that empower individuals and businesses to achieve their economic potential. We believe
+                        that financial inclusion is key to sustainable development.</p>
+                    <p>Our vision is to be Rwanda's leading micro-lending partner, recognized for our commitment to
+                        client success, ethical practices, and positive social impact.</p>
+
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h4>Client-Centric</h4>
+                            <p>We prioritize our clients' needs and success above all else, offering personalized
+                                service and flexible solutions.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Integrity</h4>
+                            <p>We maintain the highest ethical standards in all our operations, ensuring transparency
+                                and trust.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Innovation</h4>
+                            <p>We continuously develop new financial products and services that meet the evolving needs
+                                of our clients.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Collaboration</h4>
+                            <p>We work closely with clients, partners, and communities to create shared value and
+                                sustainable impact.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-media">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+                        alt="Pearl Capital team meeting"
+                        style="width:100%; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-head" data-anim="slide-up">
+                <h2>Our Story</h2>
+                <p class="muted">From humble beginnings to becoming a trusted financial partner for thousands of
+                    Rwandans.</p>
+            </div>
+
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h3>Foundation</h3>
+                        <p>Pearl Capital Ltd was established by a group of financial experts with a shared vision of
+                            addressing the credit gap for SMEs and individuals in Rwanda.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h3>First 1,000 Clients</h3>
+                        <p>Within our first year of operation, we successfully served over 1,000 clients, disbursing
+                            loans that helped businesses expand and families achieve financial stability.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2025</span>
+                        <h3>Expansion & Recognition</h3>
+                        <p>We expanded our services to agricultural finance and received recognition for our responsible
+                            lending practices from the Rwanda Development Board.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">Present</span>
+                        <h3>Ongoing Commitment</h3>
+                        <p>Today, we continue to innovate and expand our services, remaining committed to our mission of
+                            empowering Rwandans through accessible finance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Preview -->
+    <section class="team-preview">
+        <div class="container">
+            <div class="section-head" data-anim="slide-up">
+                <h2>Meet Our Leadership</h2>
+                <p class="muted">Our experienced team brings together diverse expertise in finance, business
+                    development, and community engagement.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Jean Paul Ndayisaba</h4>
+                        <div class="position">Chief Executive Officer</div>
+                        <p>With over 15 years in financial services, Jean Paul leads Pearl Capital with a vision for
+                            inclusive economic growth.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Marie Claire Uwimana</h4>
+                        <div class="position">Chief Operations Officer</div>
+                        <p>Marie Claire oversees our day-to-day operations, ensuring efficient service delivery across
+                            all branches.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>David Habimana</h4>
+                        <div class="position">Head of Credit</div>
+                        <p>David leads our credit assessment team, balancing risk management with client-centric
+                            solutions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:40px;">
+                <a class="btn btn-primary" href="ourteam.html">View Full Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2>Our Impact in Numbers</h2>
+            <p class="lead" style="opacity:0.9; max-width:700px; margin:0 auto;">We measure our success by the positive
+                impact we create in the lives of our clients and communities.</p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Clients Served</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number" data-target="12000">0</div>
+                    <div class="stat-label">Loans Disbursed</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number" data-target="85">0</div>
+                    <div class="stat-label">% Client Satisfaction</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Years Collective Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance -->
+    <section class="governance">
+        <div class="container">
+            <div class="section-head" data-anim="slide-up">
+                <h2>Governance & Compliance</h2>
+                <p class="muted">We adhere to the highest standards of corporate governance and regulatory compliance.
+                </p>
+            </div>
+
+            <div class="governance-grid">
+                <div class="governance-card">
+                    <h3><i class="fas fa-balance-scale"></i> Regulatory Compliance</h3>
+                    <p>Pearl Capital Ltd operates in full compliance with Rwandan financial regulations and
+                        international best practices in microfinance.</p>
+                    <ul>
+                        <li>Registered with the Rwanda Development Board</li>
+                        <li>Compliant with National Bank of Rwanda guidelines</li>
+                        <li>Regular external audits and reporting</li>
+                        <li>Transparent pricing and fee disclosure</li>
+                    </ul>
+                </div>
+
+                <div class="governance-card">
+                    <h3><i class="fas fa-chart-line"></i> Risk Management</h3>
+                    <p>We maintain robust risk management frameworks to protect our clients and ensure the
+                        sustainability of our operations.</p>
+                    <ul>
+                        <li>Comprehensive credit assessment processes</li>
+                        <li>Diversified loan portfolio</li>
+                        <li>Regular monitoring and evaluation</li>
+                        <li>Client education on financial management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-large" aria-labelledby="cta">
+        <div class="container" data-anim="slide-up">
+            <h2 id="cta">Join Thousands of Satisfied Clients</h2>
+            <p class="muted">Discover how Pearl Capital can help you achieve your financial goals with our tailored loan
+                products.</p>
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="contact.html">Apply Now</a>
+                <a class="btn btn-outline" href="services.html">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col about">
+                <a class="brand" href="index.html"> <img src="logo.png" alt="logo.png" width="65">
+                    Pearl <strong>Capital</strong></a>
+                <p class="muted">Pearl Capital Ltd is committed to providing innovative, affordable and tailored
+                    financial products and services to create positive social impact in Rwanda.</p>
+
+                <div class="contact-mini">
+                    <p><i class="fas fa-map-marker-alt"></i> 4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali
+                    </p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+250788123456">+250 788 123 456</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@pearlcapital.rw">info@pearlcapital.rw</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ourteam.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                    <li><a href="services.html#salaried">Salaried Loans</a></li>
+                    <li><a href="services.html#agri">Agricultural Finance</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h4>Stay Informed</h4>
+                <p class="muted">Subscribe for product updates, market insights and events.</p>
+                <form id="newsletterForm" class="newsletter-form" novalidate>
+                    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                    <div id="newsletterMessage" class="small form-message" aria-live="polite"></div>
+                </form>
+
+                <div class="social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="row">
+                <p>&copy; 2025 Pearl Capital Ltd. All Rights Reserved. | Designed for Rwanda's Growth</p>
+                <small class="muted">Registered: October 2023 — P.O. BOX 4705, Kigali</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple counter animation for statistics
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200; // The lower the slower
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    // Lower inc to slow and higher to slow
+                    const inc = target / speed;
+
+                    // Check if target is reached
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + inc);
+                        // Call function every ms
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                // Trigger the counter when element comes into view
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                observer.observe(counter);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Meet the Pearl Capital Ltd team — Experienced professionals dedicated to providing responsible micro-lending solutions in Rwanda." />
+  <title>Our Team | Pearl Capital Ltd</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- JS (deferred) -->
+  <script defer src="js/script.js"></script>
+  
+  <style>
+    /* OUR TEAM PAGE SPECIFIC STYLES */
+    
+    .team-hero {
+      background: linear-gradient(135deg, rgba(0,86,163,0.92), rgba(26,43,60,0.88)), 
+                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    
+    .team-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .team-hero .lead {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+      line-height: 1.6;
+    }
+    
+    .team-intro {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    
+    .team-intro h2 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .team-intro p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    
+    .team-section {
+      padding: 60px 0;
+    }
+    
+    .team-section:nth-child(even) {
+      background: #f8fafc;
+    }
+    
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-heading h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .section-heading p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    
+    .team-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .team-img {
+      height: 280px;
+      background: #e9ecef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .team-info {
+      padding: 25px;
+    }
+    
+    .team-info h3 {
+      margin: 0 0 5px;
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+    
+    .team-position {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .team-bio {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    
+    .team-contact {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .team-contact a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f0f4f8;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .team-contact a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    
+    .team-stats {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+    
+    .stat-item {
+      padding: 20px;
+    }
+    
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .advisory-section {
+      padding: 80px 0;
+    }
+    
+    .advisory-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .advisory-content h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .advisory-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    .advisory-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .advisory-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    
+    .advisory-list i {
+      color: var(--accent);
+      margin-right: 10px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    
+    .advisory-media {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .advisory-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .careers-cta {
+      padding: 80px 0;
+      background: #f8fafc;
+      text-align: center;
+    }
+    
+    .careers-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .careers-content h2 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .careers-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .value-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
+    
+    .value-item h4 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    /* Modal styles for team member details */
+    .team-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .modal-content {
+      background: #fff;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--muted);
+      z-index: 10;
+    }
+    
+    .modal-body {
+      padding: 30px;
+    }
+    
+    .modal-header {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .modal-img {
+      height: 200px;
+      background: #e9ecef;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 4rem;
+    }
+    
+    .modal-info h2 {
+      color: var(--primary);
+      margin: 0 0 5px;
+    }
+    
+    .modal-position {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: block;
+    }
+    
+    .modal-contact {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .modal-details h3 {
+      color: var(--primary);
+      margin: 25px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .team-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .team-hero .lead {
+        font-size: 1.1rem;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .advisory-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .modal-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .modal-contact {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Pearl Capital home">
+        <i class="fas fa-gem logo-icon" aria-hidden="true"></i>
+        <span class="brand-text">Pearl <strong>Capital</strong></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+        <ul class="nav-list" role="menubar">
+          <li role="none"><a role="menuitem" class="nav-link" href="index.html">Home</a></li>
+          <li role="none"><a role="menuitem" class="nav-link" href="about.html">About</a></li>
+          <li role="none"><a role="menuitem" class="nav-link" href="services.html">Services</a></li>
+          <li role="none"><a role="menuitem" class="nav-link active" href="ourteam.html">Our Team</a></li>
+          <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
+          <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="contact.html">Apply Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Team Hero -->
+  <section class="team-hero">
+    <div class="container">
+      <h1>Meet the Pearl Capital Team</h1>
+      <p class="lead">Our dedicated professionals bring together decades of experience in microfinance, business development, and community empowerment to serve Rwanda's growth.</p>
+      <a class="btn btn-primary" href="#leadership">Our Leadership</a>
+    </div>
+  </section>
+
+  <!-- Team Introduction -->
+  <section class="team-intro">
+    <div class="container">
+      <h2>Expertise You Can Trust</h2>
+      <p>At Pearl Capital, we believe that our greatest asset is our team. Each member brings unique skills and perspectives, united by a common commitment to responsible lending and client success. Our diverse expertise ensures we can provide tailored financial solutions that meet the specific needs of SMEs, salaried individuals, and farmers across Rwanda.</p>
+    </div>
+  </section>
+
+  <!-- Leadership Team -->
+  <section class="team-section" id="leadership">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Leadership Team</h2>
+        <p>Our executive leadership brings strategic vision and operational excellence to Pearl Capital's mission of financial inclusion.</p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="team-info">
+            <h3>Jean Paul Ndayisaba</h3>
+            <span class="team-position">Chief Executive Officer</span>
+            <p class="team-bio">With over 15 years of experience in financial services, Jean Paul leads Pearl Capital with a vision for inclusive economic growth and sustainable development.</p>
+            <div class="team-contact">
+              <a href="mailto:jp.ndayisaba@pearlcapital.rw" aria-label="Email Jean Paul"><i class="fas fa-envelope"></i></a>
+              <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-img">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="team-info">
+            <h3>Marie Claire Uwimana</h3>
+            <span class="team-position">Chief Operations Officer</span>
+            <p class="team-bio">Marie Claire oversees our day-to-day operations, ensuring efficient service delivery across all branches and maintaining our commitment to client satisfaction.</p>
+            <div class="team-contact">
+              <a href="mailto:mc.uwimana@pearlcapital.rw" aria-label="Email Marie Claire"><i class="fas fa-envelope"></i></a>
+              <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-img">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="team-info">
+            <h3>David Habimana</h3>
+            <span class="team-position">Head of Credit</span>
+            <p class="team-bio">David leads our credit assessment team, balancing risk management with client-centric solutions to ensure responsible lending practices.</p>
+            <div class="team-contact">
+              <a href="mailto:d.habimana@pearlcapital.rw" aria-label="Email David"><i class="fas fa-envelope"></i></a>
+              <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loan Officers -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Loan Officers & Client Advisors</h2>
+        <p>Our frontline team works directly with clients to understand their needs and provide personalized financial solutions.</p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="team-info">
+            <h3>Annette Mukandori</h3>
+            <span class="team-position">Senior Loan Officer - SME Division</span>
+            <p class="team-bio">Annette specializes in working with small and medium enterprises, helping business owners access capital for growth and expansion.</p>
+            <div class="team-contact">
+              <a href="mailto:a.mukandori@pearlcapital.rw" aria-label="Email Annette"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-img">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="team-info">
+            <h3>Eric Nsengimana</h3>
+            <span class="team-position">Agricultural Finance Specialist</span>
+            <p class="team-bio">Eric works directly with farmers across Rwanda, developing loan products aligned with agricultural cycles and seasonal needs.</p>
+            <div class="team-contact">
+              <a href="mailto:e.nsengimana@pearlcapital.rw" aria-label="Email Eric"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-img">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="team-info">
+            <h3>Grace Uwase</h3>
+            <span class="team-position">Client Relations Manager</span>
+            <p class="team-bio">Grace ensures our clients receive exceptional service throughout their journey with Pearl Capital, from application to repayment.</p>
+            <div class="team-contact">
+              <a href="mailto:g.uwase@pearlcapital.rw" aria-label="Email Grace"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Stats -->
+  <section class="team-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Team Members</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="stat-number">15</div>
+          <div class="stat-label">Years Average Experience</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="stat-number">5</div>
+          <div class="stat-label">Regions Covered</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="stat-number">3</div>
+          <div class="stat-label">Industry Awards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisory Board -->
+  <section class="advisory-section">
+    <div class="container">
+      <div class="advisory-grid">
+        <div class="advisory-content">
+          <h2>Advisory Board</h2>
+          <p>Our advisory board brings together leaders from finance, agriculture, and community development to guide Pearl Capital's strategic direction and ensure we remain aligned with Rwanda's development goals.</p>
+          
+          <ul class="advisory-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Dr. Emmanuel Nkurunziza</strong> - Former Director General, Rwanda Development Board</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Chantal Uwimana</strong> - President, Rwanda Women Entrepreneurs Association</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Prof. Jean de Dieu Harerimana</strong> - Dean, School of Economics, University of Rwanda</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Patrick Bizimana</strong> - Chairman, Rwanda Microfinance Association</li>
+          </ul>
+        </div>
+        
+        <div class="advisory-media">
+          <img src="https://images.unsplash.com/photo-1573164574230-db1d5e960238?auto=format&fit=crop&w=800&q=80" alt="Advisory Board Meeting">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Careers CTA -->
+  <section class="careers-cta">
+    <div class="container">
+      <div class="careers-content">
+        <h2>Join Our Team</h2>
+        <p>At Pearl Capital, we're always looking for talented individuals who share our passion for financial inclusion and community development. If you're interested in joining our team, we'd love to hear from you.</p>
+        <a class="btn btn-primary" href="contact.html">View Open Positions</a>
+        
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h4>Client-First Culture</h4>
+            <p>We prioritize our clients' success in everything we do.</p>
+          </div>
+          
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h4>Professional Growth</h4>
+            <p>We invest in our team's development and career advancement.</p>
+          </div>
+          
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4>Collaborative Environment</h4>
+            <p>We work together to achieve shared goals and success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-large" aria-labelledby="cta">
+    <div class="container" data-anim="slide-up">
+      <h2 id="cta">Ready to Work With Our Team?</h2>
+      <p class="muted">Contact us today to discuss your financial needs with one of our experienced loan officers.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="contact.html">Get in Touch</a>
+        <a class="btn btn-outline" href="services.html">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col about">
+        <a class="brand" href="index.html"><img src="logo.png" alt="logo" width="65">Pearl <strong>Capital</strong></a>
+        <p class="muted">Pearl Capital Ltd is committed to providing innovative, affordable and tailored financial products and services to create positive social impact in Rwanda.</p>
+
+        <div class="contact-mini">
+          <p><i class="fas fa-map-marker-alt"></i> 4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali</p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+250788123456">+250 788 123 456</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:info@pearlcapital.rw">info@pearlcapital.rw</a></p>
+        </div>
+      </div>
+
+      <div class="footer-col links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="ourteam.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html#sme">SME Financing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col services">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html#sme">SME Financing</a></li>
+          <li><a href="services.html#salaried">Salaried Loans</a></li>
+          <li><a href="services.html#agri">Agricultural Finance</a></li>
+          <li><a href="services.html">Business Advisory</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h4>Stay Informed</h4>
+        <p class="muted">Subscribe for product updates, market insights and events.</p>
+        <form id="newsletterForm" class="newsletter-form" novalidate>
+          <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+          <div id="newsletterMessage" class="small form-message" aria-live="polite"></div>
+        </form>
+
+        <div class="social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="row">
+        <p>&copy; 2025 Pearl Capital Ltd. All Rights Reserved. | Designed for Rwanda's Growth</p>
+        <small class="muted">Registered: October 2023 — P.O. BOX 4705, Kigali</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Team Member Modal -->
+  <div class="team-modal" id="teamModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <div class="modal-header">
+          <div class="modal-img">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="modal-info">
+            <h2 id="modalName">Jean Paul Ndayisaba</h2>
+            <span class="modal-position" id="modalPosition">Chief Executive Officer</span>
+            <p id="modalBio">With over 15 years of experience in financial services, Jean Paul leads Pearl Capital with a vision for inclusive economic growth and sustainable development.</p>
+            <div class="modal-contact">
+              <a href="mailto:jp.ndayisaba@pearlcapital.rw" aria-label="Email"><i class="fas fa-envelope"></i></a>
+              <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-details">
+          <h3>Professional Background</h3>
+          <p id="modalBackground">Jean Paul began his career in commercial banking before transitioning to microfinance. He has held leadership positions at several financial institutions across East Africa, with a focus on SME development and agricultural finance.</p>
+          
+          <h3>Education & Certifications</h3>
+          <ul id="modalEducation">
+            <li>MBA, University of Rwanda</li>
+            <li>Bachelor of Commerce, Makerere University</li>
+            <li>Certified Microfinance Professional (CMFP)</li>
+          </ul>
+          
+          <h3>Areas of Expertise</h3>
+          <ul id="modalExpertise">
+            <li>Strategic Planning & Business Development</li>
+            <li>Risk Management & Compliance</li>
+            <li>Financial Inclusion Strategies</li>
+            <li>Team Leadership & Development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Team page specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      // Team member modal functionality
+      const teamCards = document.querySelectorAll('.team-card');
+      const teamModal = document.getElementById('teamModal');
+      const modalClose = document.querySelector('.modal-close');
+      
+      // Sample team data (in a real application, this would come from a database)
+      const teamData = {
+        'Jean Paul Ndayisaba': {
+          name: 'Jean Paul Ndayisaba',
+          position: 'Chief Executive Officer',
+          bio: 'With over 15 years of experience in financial services, Jean Paul leads Pearl Capital with a vision for inclusive economic growth and sustainable development.',
+          background: 'Jean Paul began his career in commercial banking before transitioning to microfinance. He has held leadership positions at several financial institutions across East Africa, with a focus on SME development and agricultural finance.',
+          education: [
+            'MBA, University of Rwanda',
+            'Bachelor of Commerce, Makerere University',
+            'Certified Microfinance Professional (CMFP)'
+          ],
+          expertise: [
+            'Strategic Planning & Business Development',
+            'Risk Management & Compliance',
+            'Financial Inclusion Strategies',
+            'Team Leadership & Development'
+          ]
+        },
+        'Marie Claire Uwimana': {
+          name: 'Marie Claire Uwimana',
+          position: 'Chief Operations Officer',
+          bio: 'Marie Claire oversees our day-to-day operations, ensuring efficient service delivery across all branches and maintaining our commitment to client satisfaction.',
+          background: 'With a background in operations management and process optimization, Marie Claire has successfully led operational teams in both banking and microfinance sectors for over 12 years.',
+          education: [
+            'MSc in Operations Management, Kigali Independent University',
+            'Bachelor of Business Administration, University of Rwanda',
+            'Lean Six Sigma Green Belt Certification'
+          ],
+          expertise: [
+            'Operations Management & Process Optimization',
+            'Customer Experience Enhancement',
+            'Branch Network Management',
+            'Performance Monitoring & Evaluation'
+          ]
+        },
+        'David Habimana': {
+          name: 'David Habimana',
+          position: 'Head of Credit',
+          bio: 'David leads our credit assessment team, balancing risk management with client-centric solutions to ensure responsible lending practices.',
+          background: 'David has over 10 years of experience in credit risk assessment and portfolio management. He previously worked with a leading commercial bank where he managed a diverse loan portfolio.',
+          education: [
+            'MSc in Finance, University of Kigali',
+            'Bachelor of Economics, National University of Rwanda',
+            'Certified Credit Professional (CCP)'
+          ],
+          expertise: [
+            'Credit Risk Assessment & Management',
+            'Loan Portfolio Analysis',
+            'Regulatory Compliance',
+            'Financial Analysis & Modeling'
+          ]
+        }
+      };
+      
+      // Add click event to team cards
+      teamCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const name = this.querySelector('h3').textContent;
+          const memberData = teamData[name];
+          
+          if (memberData) {
+            // Populate modal with team member data
+            document.getElementById('modalName').textContent = memberData.name;
+            document.getElementById('modalPosition').textContent = memberData.position;
+            document.getElementById('modalBio').textContent = memberData.bio;
+            document.getElementById('modalBackground').textContent = memberData.background;
+            
+            // Populate education list
+            const educationList = document.getElementById('modalEducation');
+            educationList.innerHTML = '';
+            memberData.education.forEach(item => {
+              const li = document.createElement('li');
+              li.textContent = item;
+              educationList.appendChild(li);
+            });
+            
+            // Populate expertise list
+            const expertiseList = document.getElementById('modalExpertise');
+            expertiseList.innerHTML = '';
+            memberData.expertise.forEach(item => {
+              const li = document.createElement('li');
+              li.textContent = item;
+              expertiseList.appendChild(li);
+            });
+            
+            // Show modal
+            teamModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+          }
+        });
+      });
+      
+      // Close modal when close button is clicked
+      modalClose.addEventListener('click', function() {
+        teamModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+      });
+      
+      // Close modal when clicking outside the content
+      teamModal.addEventListener('click', function(e) {
+        if (e.target === teamModal) {
+          teamModal.style.display = 'none';
+          document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+      });
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && teamModal.style.display === 'flex') {
+          teamModal.style.display = 'none';
+          document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+      });
+    });
+  </script>
+</body>
+</html>

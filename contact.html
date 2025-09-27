@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Contact Pearl Capital Ltd — Get in touch for micro-lending solutions in Rwanda. Reach our team for SME loans, salaried person loans, and agricultural finance." />
+    <title>Contact Us | Pearl Capital Ltd</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JS (deferred) -->
+    <script defer src="js/script.js"></script>
+
+    <style>
+        /* CONTACT PAGE SPECIFIC STYLES */
+
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(0, 86, 163, 0.92), rgba(26, 43, 60, 0.88)),
+                url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero .lead {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .contact-info {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(19, 28, 38, 0.07);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background: var(--primary);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .contact-text a {
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-2);
+        }
+
+        .business-hours {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .business-hours h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-form {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(19, 28, 38, 0.07);
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 86, 163, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-submit {
+            background: linear-gradient(90deg, var(--primary), var(--primary-2));
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 163, 0.3);
+        }
+
+        .map-section {
+            margin: 60px 0;
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(19, 28, 38, 0.07);
+            height: 400px;
+        }
+
+        .map-placeholder {
+            background: #e9ecef;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .faq-contact {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .faq-contact h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .faq-contact p {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-hero .lead {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Pearl Capital home">
+                <img src="logo.png" alt="logo" width="65">
+                <span class="brand-text">Pearl <strong>Capital</strong></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><i
+                        class="fas fa-bars"></i></button>
+                <ul class="nav-list" role="menubar">
+                    <li role="none"><a role="menuitem" class="nav-link" href="index.html">Home</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="about.html">About</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="services.html">Services</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="ourteam.html">Our Team</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link active" href="contact.html">Contact</a></li>
+                    <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="contact.html">Apply Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get in Touch With Pearl Capital</h1>
+            <p class="lead">We're here to help you access the financial solutions you need. Contact our team for
+                personalized assistance with loan applications, inquiries, or business advisory services.</p>
+            <a class="btn btn-primary" href="#contact-form">Send a Message</a>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Our Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Head Office</h4>
+                                <p>4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali, Rwanda</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p><a href="tel:+250788123456">+250 788 123 456</a></p>
+                                <p><a href="tel:+250788123457">+250 788 123 457</a> (Loan Department)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@pearlcapital.rw">info@pearlcapital.rw</a></p>
+                                <p><a href="mailto:loans@pearlcapital.rw">loans@pearlcapital.rw</a> (Loan Applications)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-hours">
+                        <h4>Detailed Business Hours</h4>
+                        <ul class="hours-list">
+                            <li><span>Monday</span> <span>8:00 AM - 5:00 PM</span></li>
+                            <li><span>Tuesday</span> <span>8:00 AM - 5:00 PM</span></li>
+                            <li><span>Wednesday</span> <span>8:00 AM - 5:00 PM</span></li>
+                            <li><span>Thursday</span> <span>8:00 AM - 5:00 PM</span></li>
+                            <li><span>Friday</span> <span>8:00 AM - 5:00 PM</span></li>
+                            <li><span>Saturday</span> <span>9:00 AM - 1:00 PM</span></li>
+                            <li><span>Sunday</span> <span>Closed</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 id="contact-form">Send Us a Message</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="loan-inquiry">Loan Inquiry</option>
+                                <option value="sme-financing">SME Financing</option>
+                                <option value="salaried-loans">Salaried Person Loans</option>
+                                <option value="agricultural-finance">Agricultural Finance</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <h3>Visit Our Office</h3>
+                <p class="muted">Our head office is conveniently located in the heart of Kigali's business district.</p>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <div>
+                            <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Interactive Map Location</p>
+                            <small>4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Contact Section -->
+            <div class="faq-contact">
+                <h3>Quick Questions?</h3>
+                <p>Check our Frequently Asked Questions for immediate answers to common queries about our services,
+                    application process, and requirements.</p>
+                <a class="btn btn-outline" href="index.html#faq">View FAQ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-large" aria-labelledby="cta">
+        <div class="container" data-anim="slide-up">
+            <h2 id="cta">Ready to grow with Pearl Capital?</h2>
+            <p class="muted">Start your application online or talk to a loan officer for personalized advice.</p>
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="contact.html">Apply Now</a>
+                <a class="btn btn-outline" href="ourteam.html">Meet Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col about">
+                <a class="brand" href="index.html"> <img src="logo.png" alt="logo.png" width="65">
+                    Pearl <strong>Capital</strong></a>
+                <p class="muted">Pearl Capital Ltd is committed to providing innovative, affordable and tailored
+                    financial products and services to create positive social impact in Rwanda.</p>
+
+                <div class="contact-mini">
+                    <p><i class="fas fa-map-marker-alt"></i> 4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali
+                    </p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+250788123456">+250 788 123 456</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@pearlcapital.rw">info@pearlcapital.rw</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ourteam.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                    <li><a href="services.html#salaried">Salaried Loans</a></li>
+                    <li><a href="services.html#agri">Agricultural Finance</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h4>Stay Informed</h4>
+                <p class="muted">Subscribe for product updates, market insights and events.</p>
+                <form id="newsletterForm" class="newsletter-form" novalidate>
+                    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                    <div id="newsletterMessage" class="small form-message" aria-live="polite"></div>
+                </form>
+
+                <div class="social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="row">
+                <p>&copy; 2025 Pearl Capital Ltd. All Rights Reserved. | Designed for Rwanda's Growth</p>
+                <small class="muted">Registered: October 2023 — P.O. BOX 4705, Kigali</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form validation for the contact page
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Basic validation
+                    const firstName = document.getElementById('firstName');
+                    const lastName = document.getElementById('lastName');
+                    const email = document.getElementById('email');
+                    const subject = document.getElementById('subject');
+                    const message = document.getElementById('message');
+
+                    let isValid = true;
+
+                    // Reset previous error states
+                    const errorFields = contactForm.querySelectorAll('.error');
+                    errorFields.forEach(field => field.classList.remove('error'));
+
+                    // Validate required fields
+                    if (!firstName.value.trim()) {
+                        isValid = false;
+                        firstName.classList.add('error');
+                    }
+
+                    if (!lastName.value.trim()) {
+                        isValid = false;
+                        lastName.classList.add('error');
+                    }
+
+                    if (!email.value.trim() || !isValidEmail(email.value)) {
+                        isValid = false;
+                        email.classList.add('error');
+                    }
+
+                    if (!subject.value) {
+                        isValid = false;
+                        subject.classList.add('error');
+                    }
+
+                    if (!message.value.trim()) {
+                        isValid = false;
+                        message.classList.add('error');
+                    }
+
+                    if (isValid) {
+                        // In a real application, you would submit the form data to a server
+                        alert('Thank you for your message! We will get back to you soon.');
+                        contactForm.reset();
+                    } else {
+                        alert('Please fill in all required fields correctly.');
+                    }
+                });
+            }
+
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
+
+</html>

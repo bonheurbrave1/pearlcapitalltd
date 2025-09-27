@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Services by Pearl Capital Ltd — Explore our tailored micro-lending solutions for SMEs, salaried persons, and farmers in Rwanda. Transparent pricing and flexible terms." />
+    <title>Our Services | Pearl Capital Ltd</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JS (deferred) -->
+    <script defer src="js/script.js"></script>
+
+    <style>
+        /* SERVICES PAGE SPECIFIC STYLES */
+
+        .services-hero {
+            background: linear-gradient(135deg, rgba(0, 86, 163, 0.92), rgba(26, 43, 60, 0.88)),
+                url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .services-hero .lead {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .services-nav {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 72px;
+            z-index: 99;
+        }
+
+        .services-nav-inner {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .service-nav-link {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: #f8fafc;
+            color: var(--muted);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .service-nav-link:hover,
+        .service-nav-link.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .service-section {
+            padding: 80px 0;
+        }
+
+        .service-section:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .service-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .service-header h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-header .lead {
+            font-size: 1.2rem;
+            color: var(--muted);
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            margin: 25px 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .service-features i {
+            color: var(--accent);
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .service-pricing {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+        }
+
+        .service-pricing h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-media {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .service-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .comparison-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc, #eef4fb);
+        }
+
+        .comparison-table {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+
+        .table-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+            font-weight: 600;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .feature-highlights {
+            padding: 80px 0;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .highlight-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+        }
+
+        .highlight-card h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .faq-services {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .faq-services .faq-grid {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .service-detail {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-media {
+                order: -1;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .table-header div:not(:first-child),
+            .table-row div:not(:first-child) {
+                border-top: 1px solid #eee;
+                padding-top: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-hero .lead {
+                font-size: 1.1rem;
+            }
+
+            .service-header h2 {
+                font-size: 2rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-nav-inner {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-nav-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Pearl Capital home">
+                <img src="logo.png" alt="logo.png" width="65">
+                <span class="brand-text">Pearl <strong>Capital</strong></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><i
+                        class="fas fa-bars"></i></button>
+                <ul class="nav-list" role="menubar">
+                    <li role="none"><a role="menuitem" class="nav-link" href="index.html">Home</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="about.html">About</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link active" href="services.html">Services</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="ourteam.html">Our Team</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
+                    <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="contact.html">Apply Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Tailored Financial Solutions for Rwanda</h1>
+            <p class="lead">Discover our range of micro-lending products designed to meet the unique needs of SMEs,
+                salaried individuals, and farmers across Rwanda.</p>
+            <a class="btn btn-primary" href="#sme">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services Navigation -->
+    <section class="services-nav">
+        <div class="container services-nav-inner">
+            <a href="#sme" class="service-nav-link active">SME Financing</a>
+            <a href="#salaried" class="service-nav-link">Salaried Person Loans</a>
+            <a href="#agri" class="service-nav-link">Agricultural Finance</a>
+            <a href="#comparison" class="service-nav-link">Service Comparison</a>
+            <a href="#features" class="service-nav-link">Key Features</a>
+        </div>
+    </section>
+
+    <!-- SME Financing -->
+    <section class="service-section" id="sme">
+        <div class="container">
+            <div class="service-header">
+                <h2>SME Financing</h2>
+                <p class="lead">Fuel your business growth with working capital and expansion loans tailored to your
+                    enterprise needs.</p>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-content">
+                    <h3>Empowering Small and Medium Enterprises</h3>
+                    <p>Our SME financing solutions are designed to help businesses at various stages of growth access
+                        the capital they need to expand operations, purchase equipment, manage cash flow, and seize new
+                        market opportunities.</p>
+
+                    <div class="service-features">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> <strong>Flexible loan amounts</strong> from RWF
+                                500,000 to RWF 50,000,000</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Customized repayment terms</strong> from 3
+                                to 24 months</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Business advisory support</strong> to help
+                                you plan for growth</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Fast approval process</strong> with minimal
+                                documentation</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Top-up options</strong> for existing clients
+                                with good repayment history</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-pricing">
+                        <h4><i class="fas fa-tags"></i> Pricing Structure</h4>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <span>Interest Rate:</span>
+                                <strong>5-7% monthly (declining balance)</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Study Fee:</span>
+                                <strong>1% of loan amount</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Minimum Loan:</span>
+                                <strong>RWF 500,000</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Maximum Loan:</span>
+                                <strong>RWF 50,000,000</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-cta">
+                        <a class="btn btn-primary" href="contact.html">Apply for SME Loan</a>
+                        <a class="btn btn-outline" href="contact.html">Speak to Advisor</a>
+                    </div>
+                </div>
+
+                <div class="service-media">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+                        alt="SME Business Growth">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salaried Person Loans -->
+    <section class="service-section" id="salaried">
+        <div class="container">
+            <div class="service-header">
+                <h2>Salaried Person Loans</h2>
+                <p class="lead">Access personal loans with favorable terms based on your employment and income
+                    stability.</p>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-media">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80"
+                        alt="Salaried Professional">
+                </div>
+
+                <div class="service-content">
+                    <h3>Financial Solutions for Employed Individuals</h3>
+                    <p>Whether you need funds for education, home improvement, medical expenses, or other personal
+                        needs, our salaried person loans offer competitive rates with repayment schedules aligned to
+                        your pay cycle.</p>
+
+                    <div class="service-features">
+                        <h4>Eligibility & Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> <strong>Open to civil servants</strong>, private
+                                sector employees, and pensioners</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Loan amounts</strong> from RWF 100,000 to
+                                RWF 10,000,000</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Repayment periods</strong> from 3 to 18
+                                months</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Payroll deduction option</strong> for
+                                convenient repayment</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Minimal documentation</strong> - ID, proof
+                                of income, and employment letter</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-pricing">
+                        <h4><i class="fas fa-tags"></i> Pricing Structure</h4>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <span>Interest Rate:</span>
+                                <strong>5-7% monthly (declining balance)</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Study Fee:</span>
+                                <strong>1% of loan amount</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Minimum Loan:</span>
+                                <strong>RWF 100,000</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Maximum Loan:</span>
+                                <strong>RWF 10,000,000</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-cta">
+                        <a class="btn btn-primary" href="contact.html">Apply for Personal Loan</a>
+                        <a class="btn btn-outline" href="contact.html">Check Eligibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agricultural Finance -->
+    <section class="service-section" id="agri">
+        <div class="container">
+            <div class="service-header">
+                <h2>Agricultural Finance</h2>
+                <p class="lead">Specialized loans designed to support farmers through every season of the agricultural
+                    cycle.</p>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-content">
+                    <h3>Financing Rwanda's Agricultural Sector</h3>
+                    <p>We understand the unique challenges and opportunities in agriculture. Our agricultural finance
+                        products are tailored to align with planting, growing, and harvesting cycles, providing farmers
+                        with the capital they need when they need it most.</p>
+
+                    <div class="service-features">
+                        <h4>Agricultural Solutions:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> <strong>Seasonal input loans</strong> for seeds,
+                                fertilizers, and equipment</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Asset financing</strong> for irrigation
+                                systems, storage facilities, and machinery</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Harvest advance loans</strong> to cover
+                                costs before produce sales</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Flexible repayment</strong> aligned with
+                                harvest cycles</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Agronomic advisory services</strong> to
+                                maximize productivity</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-pricing">
+                        <h4><i class="fas fa-tags"></i> Pricing Structure</h4>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <span>Interest Rate:</span>
+                                <strong>5-7% monthly (declining balance)</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Study Fee:</span>
+                                <strong>1% of loan amount</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Minimum Loan:</span>
+                                <strong>RWF 200,000</strong>
+                            </div>
+                            <div class="pricing-item">
+                                <span>Maximum Loan:</span>
+                                <strong>RWF 20,000,000</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-cta">
+                        <a class="btn btn-primary" href="contact.html">Apply for Agri Loan</a>
+                        <a class="btn btn-outline" href="contact.html">Learn About Seasons</a>
+                    </div>
+                </div>
+
+                <div class="service-media">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+                        alt="Agricultural Finance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Comparison -->
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <div class="service-header">
+                <h2>Service Comparison</h2>
+                <p class="lead">Compare our financial products to find the perfect solution for your needs.</p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div>Feature</div>
+                    <div>SME Financing</div>
+                    <div>Salaried Loans</div>
+                    <div>Agricultural Finance</div>
+                </div>
+
+                <div class="table-row">
+                    <div>Loan Amount Range</div>
+                    <div>RWF 500K - 50M</div>
+                    <div>RWF 100K - 10M</div>
+                    <div>RWF 200K - 20M</div>
+                </div>
+
+                <div class="table-row">
+                    <div>Repayment Period</div>
+                    <div>3 - 24 months</div>
+                    <div>3 - 18 months</div>
+                    <div>3 - 24 months</div>
+                </div>
+
+                <div class="table-row">
+                    <div>Interest Rate</div>
+                    <div>5-7% monthly</div>
+                    <div>5-7% monthly</div>
+                    <div>5-7% monthly</div>
+                </div>
+
+                <div class="table-row">
+                    <div>Study Fee</div>
+                    <div>1% of loan amount</div>
+                    <div>1% of loan amount</div>
+                    <div>1% of loan amount</div>
+                </div>
+
+                <div class="table-row">
+                    <div>Documentation Required</div>
+                    <div>Business registration, bank statements, business plan</div>
+                    <div>ID, proof of income, employment letter</div>
+                    <div>ID, proof of land ownership/lease, farming plan</div>
+                </div>
+
+                <div class="table-row">
+                    <div>Disbursement Time</div>
+                    <div>3-5 business days</div>
+                    <div>1-2 business days</div>
+                    <div>2-4 business days</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="feature-highlights" id="features">
+        <div class="container">
+            <div class="service-header">
+                <h2>Why Choose Pearl Capital?</h2>
+                <p class="lead">We go beyond lending to provide comprehensive support for your financial journey.</p>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h4>Personalized Service</h4>
+                    <p>Dedicated loan officers who understand your unique needs and provide tailored solutions.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4>Transparent Pricing</h4>
+                    <p>No hidden fees. Clear interest rates and charges disclosed upfront before you commit.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Fast Processing</h4>
+                    <p>Quick approval and disbursement to ensure you get funds when you need them most.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4>Business Advisory</h4>
+                    <p>Expert guidance on financial management, cash flow planning, and business growth strategies.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Responsible Lending</h4>
+                    <p>We assess affordability to ensure loans don't overburden our clients financially.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h4>Flexible Repayment</h4>
+                    <p>Customized repayment schedules that align with your income patterns and cash flow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-services">
+        <div class="container">
+            <div class="service-header">
+                <h2>Frequently Asked Questions</h2>
+                <p class="lead">Find answers to common questions about our services and application process.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What documents do I need to apply for a loan? <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a">
+                        <p>Document requirements vary by loan type:</p>
+                        <ul>
+                            <li><strong>SME Loans:</strong> Business registration, bank statements, business plan,
+                                identification</li>
+                            <li><strong>Salaried Loans:</strong> National ID, proof of income, employment letter</li>
+                            <li><strong>Agricultural Loans:</strong> ID, proof of land ownership/lease, farming plan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">How long does the approval process take? <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a">
+                        <p>For complete applications with all required documents:</p>
+                        <ul>
+                            <li>Salaried person loans: 1-2 business days</li>
+                            <li>SME loans: 3-5 business days</li>
+                            <li>Agricultural loans: 2-4 business days</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Can I get a loan if I have an existing loan elsewhere?
+                        <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a">Yes, we consider applications from clients with existing loans, subject to
+                        affordability assessment. We'll evaluate your total debt burden to ensure you can comfortably
+                        manage additional repayments.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What happens if I miss a repayment? <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a">We understand that circumstances can change. If you anticipate difficulty making
+                        a payment, contact us immediately. We offer flexible restructuring options for clients facing
+                        genuine financial challenges.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-large" aria-labelledby="cta">
+        <div class="container" data-anim="slide-up">
+            <h2 id="cta">Ready to Access Financing?</h2>
+            <p class="muted">Start your application today and take the next step toward achieving your financial goals.
+            </p>
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="contact.html">Apply Now</a>
+                <a class="btn btn-outline" href="contact.html">Contact Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col about">
+                <a class="brand" href="index.html"> <img src="logo.png" alt="logo.png" width="65">
+                    Pearl <strong>Capital</strong></a>
+                <p class="muted">Pearl Capital Ltd is committed to providing innovative, affordable and tailored
+                    financial products and services to create positive social impact in Rwanda.</p>
+
+                <div class="contact-mini">
+                    <p><i class="fas fa-map-marker-alt"></i> 4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali
+                    </p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+250788123456">+250 788 123 456</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@pearlcapital.rw">info@pearlcapital.rw</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ourteam.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                    <li><a href="services.html#salaried">Salaried Loans</a></li>
+                    <li><a href="services.html#agri">Agricultural Finance</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h4>Stay Informed</h4>
+                <p class="muted">Subscribe for product updates, market insights and events.</p>
+                <form id="newsletterForm" class="newsletter-form" novalidate>
+                    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                    <div id="newsletterMessage" class="small form-message" aria-live="polite"></div>
+                </form>
+
+                <div class="social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="row">
+                <p>&copy; 2025 Pearl Capital Ltd. All Rights Reserved. | Designed for Rwanda's Growth</p>
+                <small class="muted">Registered: October 2023 — P.O. BOX 4705, Kigali</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Services page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for service navigation
+            const serviceNavLinks = document.querySelectorAll('.service-nav-link');
+
+            serviceNavLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all links
+                    serviceNavLinks.forEach(l => l.classList.remove('active'));
+
+                    // Add active class to clicked link
+                    this.classList.add('active');
+
+                    // Get target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Calculate offset for sticky header
+                        const headerHeight = document.querySelector('.site-header').offsetHeight;
+                        const navHeight = document.querySelector('.services-nav').offsetHeight;
+                        const offset = headerHeight + navHeight + 20;
+
+                        // Scroll to section with offset
+                        window.scrollTo({
+                            top: targetSection.offsetTop - offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Update active nav link on scroll
+            window.addEventListener('scroll', function () {
+                const sections = document.querySelectorAll('.service-section, .comparison-section, .feature-highlights, .faq-services');
+                const navLinks = document.querySelectorAll('.service-nav-link');
+
+                let currentSection = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const headerHeight = document.querySelector('.site-header').offsetHeight;
+                    const navHeight = document.querySelector('.services-nav').offsetHeight;
+                    const offset = headerHeight + navHeight + 100;
+
+                    if (window.scrollY >= (sectionTop - offset)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // If at top of page, activate first link
+                if (window.scrollY < 100) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector('.service-nav-link[href="#sme"]').classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
