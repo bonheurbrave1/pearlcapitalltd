@@ -35,7 +35,7 @@ a{color:var(--primary);text-decoration:none}
   box-shadow:var(--shadow);backdrop-filter:blur(6px);
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--primary)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--primary); font-size: 27px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial;}
 .logo-icon{font-size:1.6rem;color:var(--primary-2)}
 .main-nav{position:relative}
 .hamburger{display:none;border:0;background:transparent;font-size:1.2rem;padding:8px;cursor:pointer}
@@ -144,7 +144,8 @@ a{color:var(--primary);text-decoration:none}
 .footer-bottom p{margin:6px 0}
 
 /* Small helpers */
-.muted{color:rgba(127, 148, 42, 0.55)}
+.muted{color:rgba(169, 169, 187, 0.825)}
+.topper{color:rgba(1, 1, 197, 0.825)}
 .small{font-size:0.9rem}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
