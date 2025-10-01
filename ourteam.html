@@ -312,6 +312,105 @@
       margin-bottom: 15px;
     }
     
+    /* DR. GATABAZI FULL SCREEN SECTION */
+    .fullscreen-section {
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f8fafc 0%, #e9ecef 100%);
+      padding: 80px 0;
+    }
+    
+    .fullscreen-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      min-height: 800px;
+    }
+    
+    .fullscreen-img {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 6rem;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fullscreen-img::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.1;
+    }
+    
+    .fullscreen-content {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow-y: auto;
+      max-height: 800px;
+    }
+    
+    .fullscreen-content h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+    
+    .fullscreen-position {
+      color: var(--accent);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      display: block;
+    }
+    
+    .fullscreen-bio {
+      color: var(--muted);
+      line-height: 1.3;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    
+    .fullscreen-contact {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .fullscreen-contact a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    
+    .fullscreen-contact a:hover {
+      background: var(--primary-2);
+      transform: translateY(-3px);
+    }
+    
     /* Modal styles for team member details */
     .team-modal {
       display: none;
@@ -405,6 +504,16 @@
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      
+      .fullscreen-card {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+      
+      .fullscreen-img {
+        height: 300px;
+        font-size: 4rem;
+      }
     }
     
     @media (max-width: 768px) {
@@ -439,6 +548,18 @@
       
       .modal-contact {
         justify-content: center;
+      }
+      
+      .fullscreen-content {
+        padding: 30px;
+      }
+      
+      .fullscreen-content h2 {
+        font-size: 2rem;
+      }
+      
+      .fullscreen-position {
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -541,33 +662,32 @@
     </div>
   </section>
 
-  <!-- Loan Officers -->
-  <section class="team-section">
+  <!-- Dr. Gatabazi Full Screen Section -->
+  <section class="fullscreen-section">
     <div class="container">
-      <div class="section-heading">
-        <h2>Management</h2>
-        <p>Our Executive team works directly with clients to understand their needs and provide personalized financial solutions.</p>
-      </div>
-      
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-img">
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="team-info">
-            <h3>Dr. Gatabazi Emmanuel Thomas</h3>
-            <span class="team-position">Managing Director</span>
-            <p class="team-bio"> Over the years he has held a variety of positions including lecturer, director of finance, accountant general supervising two directorates, public accounts and national treasury, vice-rector in charge of administration and finance of a Government University and as a Bank Senior Officer. Dr Gatabazi has a PhD from the University of Fort Hare, his thesis investigated why SMEs don’t get adequate bank financing and has an MBA specialising in Finance from the PSG College of Technology</p>
-            <div class="team-contact">
-              <a href="mailto:a.mukandori@pearlcapital.rw" aria-label="Email Annette"><i class="fas fa-envelope"></i></a>
-            </div>
-          </div>
+      <div class="fullscreen-card">
+        <div class="fullscreen-img">
+          <i class="fas fa-user-tie"></i>
         </div>
+        <div class="fullscreen-content">
+          <h2>Dr. Gatabazi Emmanuel Thomas</h2>
+          <span class="fullscreen-position">Managing Director</span>
+          <div class="fullscreen-bio">
+            <p>Dr. Emmanuel Thomas Gatabazi is a seasoned, high profile Finance and Banking professional, with a vast knowledge of financial management, institutions and banking.</p>
+            <p>He is a former Executive in charge of Rwanda Public Financial Management (PFM) reforms and PFM Trust Fund with donor contribution from the World Bank, EU and DFID and later on oversaw the PFM basket fund that was established by PFM Donor Group. He was responsible for the coordination of all PFM reforms across the country including fund raising for and managing the activities under the PFM trust fund.</p>
+            <p>For the past 25 years he has held a variety of positions including lecturer, director of finance, accountant general supervising two directorates, public accounts and national treasury, vice-rector in charge of administration and finance of a Government University and as a Senior Bank official.</p>
+            <p>Dr Gatabazi got his PhD from the University of Fort Hare, his thesis investigated why SMEs don't get adequate bank financing and has an MBA specialising in Finance, he holds a certification in Financial Programming and Policies, Corporate Governance, Risk management and Financial Modelling.</p>
+          </div>
+          <div class="fullscreen-contact">
+            <a href="mailto:a.mukandori@pearlcapital.rw" aria-label="Email Dr. Gatabazi"><i class="fas fa-envelope"></i></a>
+            <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Phone number"><i class="fas fa-phone"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Careers CTA -->
   <section class="careers-cta">
     <div class="container">
@@ -640,6 +760,8 @@
           <li><a href="ourteam.html">Our Team</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="services.html#sme">SME Financing</a></li>
+          <li><a href="tarif.pdf" target="_blank">Get Tariff Documents</a></li>
+
         </ul>
       </div>
 
