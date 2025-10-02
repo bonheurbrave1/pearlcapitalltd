@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="logo.png">
 
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Meet the Pearl Capital Ltd team — Experienced professionals dedicated to providing responsible micro-lending solutions in Rwanda." />
+  <meta name="description"
+    content="Meet the Pearl Capital Ltd team — Experienced professionals dedicated to providing responsible micro-lending solutions in Rwanda." />
   <title>Our Team | Pearl Capital Ltd</title>
 
   <!-- External CSS -->
@@ -17,24 +19,24 @@
 
   <!-- JS (deferred) -->
   <script defer src="js/script.js"></script>
-  
+
   <style>
     /* OUR TEAM PAGE SPECIFIC STYLES */
-    
+
     .team-hero {
-      background: linear-gradient(135deg, rgba(0,86,163,0.92), rgba(26,43,60,0.88)), 
-                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(0, 86, 163, 0.92), rgba(26, 43, 60, 0.88)),
+        url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
       padding: 100px 0 80px;
       text-align: center;
     }
-    
+
     .team-hero h1 {
       font-size: 3rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
     }
-    
+
     .team-hero .lead {
       font-size: 1.3rem;
       max-width: 800px;
@@ -42,69 +44,69 @@
       opacity: 0.95;
       line-height: 1.6;
     }
-    
+
     .team-intro {
       padding: 80px 0 60px;
       text-align: center;
     }
-    
+
     .team-intro h2 {
       color: var(--primary);
       font-size: 2.2rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .team-intro p {
       font-size: 1.1rem;
       max-width: 800px;
       margin: 0 auto;
       line-height: 1.7;
     }
-    
+
     .team-section {
       padding: 60px 0;
     }
-    
+
     .team-section:nth-child(even) {
       background: #f8fafc;
     }
-    
+
     .section-heading {
       text-align: center;
       margin-bottom: 50px;
     }
-    
+
     .section-heading h2 {
       color: var(--primary);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    
+
     .section-heading p {
       color: var(--muted);
       max-width: 700px;
       margin: 0 auto;
     }
-    
+
     .team-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
-    
+
     .team-card {
       background: #fff;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    
+
     .team-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
-    
+
     .team-img {
       height: 280px;
       background: #e9ecef;
@@ -116,43 +118,43 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .team-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
     .team-info {
       padding: 25px;
     }
-    
+
     .team-info h3 {
       margin: 0 0 5px;
       color: var(--primary);
       font-size: 1.3rem;
     }
-    
+
     .team-position {
       color: var(--accent);
       font-weight: 600;
       margin-bottom: 10px;
       display: block;
     }
-    
+
     .team-bio {
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.5;
       margin-bottom: 15px;
     }
-    
+
     .team-contact {
       display: flex;
       gap: 10px;
       margin-top: 15px;
     }
-    
+
     .team-contact a {
       width: 36px;
       height: 36px;
@@ -164,136 +166,136 @@
       justify-content: center;
       transition: all 0.3s;
     }
-    
+
     .team-contact a:hover {
       background: var(--primary);
       color: #fff;
     }
-    
+
     .team-stats {
       padding: 80px 0;
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       color: #fff;
     }
-    
+
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 30px;
       text-align: center;
     }
-    
+
     .stat-item {
       padding: 20px;
     }
-    
+
     .stat-icon {
       font-size: 2.5rem;
       margin-bottom: 15px;
       opacity: 0.9;
     }
-    
+
     .stat-number {
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
-    
+
     .stat-label {
       font-size: 1.1rem;
       opacity: 0.9;
     }
-    
+
     .advisory-section {
       padding: 80px 0;
     }
-    
+
     .advisory-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
       align-items: center;
     }
-    
+
     .advisory-content h2 {
       color: var(--primary);
       font-size: 2rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .advisory-content p {
       margin-bottom: 1.5rem;
       line-height: 1.7;
     }
-    
+
     .advisory-list {
       list-style: none;
       padding: 0;
     }
-    
+
     .advisory-list li {
       display: flex;
       align-items: flex-start;
       margin-bottom: 15px;
     }
-    
+
     .advisory-list i {
       color: var(--accent);
       margin-right: 10px;
       margin-top: 3px;
       flex-shrink: 0;
     }
-    
+
     .advisory-media {
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    
+
     .advisory-media img {
       width: 100%;
       height: auto;
       display: block;
     }
-    
+
     .careers-cta {
       padding: 80px 0;
       background: #f8fafc;
       text-align: center;
     }
-    
+
     .careers-content {
       max-width: 700px;
       margin: 0 auto;
     }
-    
+
     .careers-content h2 {
       color: var(--primary);
       font-size: 2.2rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .careers-content p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
       line-height: 1.7;
     }
-    
+
     .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
       margin-top: 40px;
     }
-    
+
     .value-item {
       background: #fff;
       border-radius: 10px;
       padding: 30px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
-    
+
     .value-icon {
       width: 70px;
       height: 70px;
@@ -306,12 +308,12 @@
       font-size: 1.8rem;
       margin: 0 auto 20px;
     }
-    
+
     .value-item h4 {
       color: var(--primary);
       margin-bottom: 15px;
     }
-    
+
     /* DR. GATABAZI FULL SCREEN SECTION */
     .fullscreen-section {
       min-height: auto;
@@ -320,11 +322,11 @@
       background: linear-gradient(135deg, #f8fafc 0%, #e9ecef 100%);
       padding: 80px 0;
     }
-    
+
     .fullscreen-card {
       background: #fff;
       border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       max-width: 1200px;
       margin: 0 auto;
@@ -332,7 +334,7 @@
       grid-template-columns: 400px 1fr;
       min-height: 800px;
     }
-    
+
     .fullscreen-img {
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       display: flex;
@@ -344,7 +346,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .fullscreen-img::before {
       content: '';
       position: absolute;
@@ -354,7 +356,7 @@
       bottom: 0;
       opacity: 0.1;
     }
-    
+
     .fullscreen-content {
       padding: 50px;
       display: flex;
@@ -363,14 +365,14 @@
       overflow-y: auto;
       max-height: 800px;
     }
-    
+
     .fullscreen-content h2 {
       color: var(--primary);
       font-size: 1.5rem;
       margin-bottom: 5px;
       line-height: 1.2;
     }
-    
+
     .fullscreen-position {
       color: var(--accent);
       font-size: 1.3rem;
@@ -378,20 +380,20 @@
       margin-bottom: 30px;
       display: block;
     }
-    
+
     .fullscreen-bio {
       color: var(--muted);
       line-height: 1.3;
       font-size: 1.1rem;
       margin-bottom: 20px;
     }
-    
+
     .fullscreen-contact {
       display: flex;
       gap: 15px;
       margin-top: 30px;
     }
-    
+
     .fullscreen-contact a {
       width: 50px;
       height: 50px;
@@ -405,12 +407,12 @@
       transition: all 0.3s;
       text-decoration: none;
     }
-    
+
     .fullscreen-contact a:hover {
       background: var(--primary-2);
       transform: translateY(-3px);
     }
-    
+
     /* Modal styles for team member details */
     .team-modal {
       display: none;
@@ -419,13 +421,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.7);
       z-index: 1000;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
-    
+
     .modal-content {
       background: #fff;
       border-radius: 10px;
@@ -435,7 +437,7 @@
       overflow-y: auto;
       position: relative;
     }
-    
+
     .modal-close {
       position: absolute;
       top: 15px;
@@ -447,18 +449,18 @@
       color: var(--muted);
       z-index: 10;
     }
-    
+
     .modal-body {
       padding: 30px;
     }
-    
+
     .modal-header {
       display: grid;
       grid-template-columns: 200px 1fr;
       gap: 30px;
       margin-bottom: 30px;
     }
-    
+
     .modal-img {
       height: 200px;
       background: #e9ecef;
@@ -469,108 +471,109 @@
       color: var(--muted);
       font-size: 4rem;
     }
-    
+
     .modal-info h2 {
       color: var(--primary);
       margin: 0 0 5px;
     }
-    
+
     .modal-position {
       color: var(--accent);
       font-weight: 600;
       margin-bottom: 15px;
       display: block;
     }
-    
+
     .modal-contact {
       display: flex;
       gap: 10px;
       margin-top: 15px;
     }
-    
+
     .modal-details h3 {
       color: var(--primary);
       margin: 25px 0 15px;
       padding-bottom: 10px;
       border-bottom: 1px solid #eee;
     }
-    
+
     /* Responsive adjustments */
     @media (max-width: 1100px) {
       .team-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      
+
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      
+
       .fullscreen-card {
         grid-template-columns: 1fr;
         max-width: 600px;
       }
-      
+
       .fullscreen-img {
         height: 300px;
         font-size: 4rem;
       }
     }
-    
+
     @media (max-width: 768px) {
       .team-hero h1 {
         font-size: 2.5rem;
       }
-      
+
       .team-hero .lead {
         font-size: 1.1rem;
       }
-      
+
       .team-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .stats-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .advisory-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .values-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .modal-header {
         grid-template-columns: 1fr;
         text-align: center;
       }
-      
+
       .modal-contact {
         justify-content: center;
       }
-      
+
       .fullscreen-content {
         padding: 30px;
       }
-      
+
       .fullscreen-content h2 {
         font-size: 2rem;
       }
-      
+
       .fullscreen-position {
         font-size: 1.1rem;
       }
     }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Pearl Capital home">
         <i class="fas fa-gem logo-icon" aria-hidden="true"></i>
-        <span class="brand-text" >Pearl <strong>Capital Ltd</strong></span>
+        <span class="brand-text">Pearl <strong>Capital Ltd</strong></span>
 
       </a>
 
@@ -582,7 +585,8 @@
           <li role="none"><a role="menuitem" class="nav-link" href="services.html">Services</a></li>
           <li role="none"><a role="menuitem" class="nav-link active" href="ourteam.html">Our Team</a></li>
           <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
-          <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="loan.pdf" target="_blank">Loan application requirements</a></li>
+          <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="loan.pdf" target="_blank">Loan
+              application requirements</a></li>
         </ul>
       </nav>
     </div>
@@ -592,7 +596,8 @@
   <section class="team-hero">
     <div class="container">
       <h1>Meet the Pearl Capital Team</h1>
-      <p class="lead">Our dedicated professionals bring together decades of experience in microfinance, business development, and community empowerment to serve Rwanda's growth.</p>
+      <p class="lead">Our dedicated professionals bring together decades of experience in microfinance, business
+        development, and community empowerment to serve Rwanda's growth.</p>
       <a class="btn btn-primary" href="#leadership">Our Leadership</a>
     </div>
   </section>
@@ -601,7 +606,10 @@
   <section class="team-intro">
     <div class="container">
       <h2>Expertise You Can Trust</h2>
-      <p>At Pearl Capital, we believe that our greatest asset is our team. Each member brings unique skills and perspectives, united by a common commitment to responsible lending and client success. Our diverse expertise ensures we can provide tailored financial solutions that meet the specific needs of SMEs, salaried individuals, and farmers across Rwanda.</p>
+      <p>At Pearl Capital, we believe that our greatest asset is our team. Each member brings unique skills and
+        perspectives, united by a common commitment to responsible lending and client success. Our diverse expertise
+        ensures we can provide tailored financial solutions that meet the specific needs of SMEs, salaried individuals,
+        and farmers across Rwanda.</p>
     </div>
   </section>
 
@@ -610,9 +618,10 @@
     <div class="container">
       <div class="section-heading">
         <h2>Board of Directors</h2>
-        <p>Our board leadership brings strategic vision and operational excellence to Pearl Capital's mission of financial inclusion.</p>
+        <p>Our board leadership brings strategic vision and operational excellence to Pearl Capital's mission of
+          financial inclusion.</p>
       </div>
-      
+
       <div class="team-grid">
         <div class="team-card">
           <div class="team-img">
@@ -621,14 +630,17 @@
           <div class="team-info">
             <h3>Mr Ibambasi Simon</h3>
             <span class="team-position">Chairman</span>
-            <p class="team-bio">Simon is a retired man with high profile during his career after studying. After finishing Diploma course in business studies in National College of Business Nakawa/UGANDA he first worked with Auditors (Central Accountants and Associates).</p>
+            <p class="team-bio">Simon is a retired man with high profile during his career after studying. After
+              finishing Diploma course in business studies in National College of Business Nakawa/UGANDA he first worked
+              with Auditors (Central Accountants and Associates).</p>
             <div class="team-contact">
-              <a href="mailto:jp.ndayisaba@pearlcapital.rw" aria-label="Email Jean Paul"><i class="fas fa-envelope"></i></a>
+              <a href="mailto:jp.ndayisaba@pearlcapital.rw" aria-label="Email Jean Paul"><i
+                  class="fas fa-envelope"></i></a>
               <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
-        
+
         <div class="team-card">
           <div class="team-img">
             <i class="fas fa-user-tie"></i>
@@ -636,14 +648,16 @@
           <div class="team-info">
             <h3>Théoneste KABANDA </h3>
             <span class="team-position">Director</span>
-            <p class="team-bio">Theoneste is a Chartered Professional Accountant whose entire professional life has been in North America (Canada) where he was working for over 30 years as an Accountant.</p>
+            <p class="team-bio">Theoneste is a Chartered Professional Accountant whose entire professional life has been
+              in North America (Canada) where he was working for over 30 years as an Accountant.</p>
             <div class="team-contact">
-              <a href="mailto:mc.uwimana@pearlcapital.rw" aria-label="Email Marie Claire"><i class="fas fa-envelope"></i></a>
+              <a href="mailto:mc.uwimana@pearlcapital.rw" aria-label="Email Marie Claire"><i
+                  class="fas fa-envelope"></i></a>
               <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
-        
+
         <div class="team-card">
           <div class="team-img">
             <i class="fas fa-user-tie"></i>
@@ -651,7 +665,9 @@
           <div class="team-info">
             <h3>Jeannette MUTIMUKEYE</h3>
             <span class="team-position">Director</span>
-            <p class="team-bio">Jeannette graduated in 2012 from Umutara Polytechnic with Bachelor of Technology in Information and Communication Technology.  She is an entrepreneur and self-employed for the last 10 years.</p>
+            <p class="team-bio">Jeannette graduated in 2012 from Umutara Polytechnic with Bachelor of Technology in
+              Information and Communication Technology. She is an entrepreneur and self-employed for the last 10 years.
+            </p>
             <div class="team-contact">
               <a href="mailto:d.habimana@pearlcapital.rw" aria-label="Email David"><i class="fas fa-envelope"></i></a>
               <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
@@ -673,13 +689,22 @@
           <h2>Dr. Gatabazi Emmanuel Thomas</h2>
           <span class="fullscreen-position">Managing Director</span>
           <div class="fullscreen-bio">
-            <p>Dr. Emmanuel Thomas Gatabazi is a seasoned, high profile Finance and Banking professional, with a vast knowledge of financial management, institutions and banking.</p>
-            <p>He is a former Executive in charge of Rwanda Public Financial Management (PFM) reforms and PFM Trust Fund with donor contribution from the World Bank, EU and DFID and later on oversaw the PFM basket fund that was established by PFM Donor Group. He was responsible for the coordination of all PFM reforms across the country including fund raising for and managing the activities under the PFM trust fund.</p>
-            <p>For the past 25 years he has held a variety of positions including lecturer, director of finance, accountant general supervising two directorates, public accounts and national treasury, vice-rector in charge of administration and finance of a Government University and as a Senior Bank official.</p>
-            <p>Dr Gatabazi got his PhD from the University of Fort Hare, his thesis investigated why SMEs don't get adequate bank financing and has an MBA specialising in Finance, he holds a certification in Financial Programming and Policies, Corporate Governance, Risk management and Financial Modelling.</p>
+            <p>Dr. Emmanuel Thomas Gatabazi is a seasoned, high profile Finance and Banking professional, with a vast
+              knowledge of financial management, institutions and banking.</p>
+            <p>He is a former Executive in charge of Rwanda Public Financial Management (PFM) reforms and PFM Trust Fund
+              with donor contribution from the World Bank, EU and DFID and later on oversaw the PFM basket fund that was
+              established by PFM Donor Group. He was responsible for the coordination of all PFM reforms across the
+              country including fund raising for and managing the activities under the PFM trust fund.</p>
+            <p>For the past 25 years he has held a variety of positions including lecturer, director of finance,
+              accountant general supervising two directorates, public accounts and national treasury, vice-rector in
+              charge of administration and finance of a Government University and as a Senior Bank official.</p>
+            <p>Dr Gatabazi got his PhD from the University of Fort Hare, his thesis investigated why SMEs don't get
+              adequate bank financing and has an MBA specialising in Finance, he holds a certification in Financial
+              Programming and Policies, Corporate Governance, Risk management and Financial Modelling.</p>
           </div>
           <div class="fullscreen-contact">
-            <a href="mailto:a.mukandori@pearlcapital.rw" aria-label="Email Dr. Gatabazi"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:a.mukandori@pearlcapital.rw" aria-label="Email Dr. Gatabazi"><i
+                class="fas fa-envelope"></i></a>
             <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" aria-label="Phone number"><i class="fas fa-phone"></i></a>
           </div>
@@ -693,9 +718,10 @@
     <div class="container">
       <div class="careers-content">
         <h2>Join Our Team</h2>
-        <p>At Pearl Capital, we're always looking for talented individuals who share our passion for financial inclusion and community development. If you're interested in joining our team, we'd love to hear from you.</p>
+        <p>At Pearl Capital, we're always looking for talented individuals who share our passion for financial inclusion
+          and community development. If you're interested in joining our team, we'd love to hear from you.</p>
         <a class="btn btn-primary" href="contact.html">View Open Positions</a>
-        
+
         <div class="values-grid">
           <div class="value-item">
             <div class="value-icon">
@@ -704,7 +730,7 @@
             <h4>Client-First Culture</h4>
             <p>We prioritize our clients' success in everything we do.</p>
           </div>
-          
+
           <div class="value-item">
             <div class="value-icon">
               <i class="fas fa-chart-line"></i>
@@ -712,7 +738,7 @@
             <h4>Professional Growth</h4>
             <p>We invest in our team's development and career advancement.</p>
           </div>
-          
+
           <div class="value-item">
             <div class="value-icon">
               <i class="fas fa-users"></i>
@@ -737,13 +763,14 @@
     </div>
   </section>
 
-  
+
   <!-- PROFESSIONAL FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col about">
         <a class="brand" href="index.html">Pearl <strong>Capital</strong></a>
-        <p style="font-weight: 100;">Pearl Capital Ltd is committed to providing innovative, affordable and tailored financial products and services to create positive social impact in Rwanda.</p>
+        <p style="font-weight: 100;">Pearl Capital Ltd is committed to providing innovative, affordable and tailored
+          financial products and services to create positive social impact in Rwanda.</p>
 
         <div class="contact-mini">
           <p><i class="fas fa-map-marker-alt"></i> 4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali</p>
@@ -783,18 +810,18 @@
       <div class="footer-col links">
         <h4>External Links</h4>
         <ul>
-            <li><a href="https://www.bnr.rw/" target="_blank">National Bank of Rwanda (BNR)</a></li>
-            <li><a href="https://www.rra.gov.rw/en/home" target="_blank">Rwanda Revenue Authority (RRA)</a></li>
-            <li><a href="https://rdb.rw/" target="_blank">Rwanda Development Board (RDB)</a></li>
-           
+          <li><a href="https://www.bnr.rw/" target="_blank">National Bank of Rwanda (BNR)</a></li>
+          <li><a href="https://www.rra.gov.rw/en/home" target="_blank">Rwanda Revenue Authority (RRA)</a></li>
+          <li><a href="https://rdb.rw/" target="_blank">Rwanda Development Board (RDB)</a></li>
+
         </ul>
-    </div>
-
-
-    
-
-       
       </div>
+
+
+
+
+
+    </div>
     </div>
 
     <div class="container footer-bottom">
@@ -807,12 +834,12 @@
 
   <script>
     // Team page specific JavaScript
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Team member modal functionality
       const teamCards = document.querySelectorAll('.team-card');
       const teamModal = document.getElementById('teamModal');
       const modalClose = document.querySelector('.modal-close');
-      
+
       // Sample team data (in a real application, this would come from a database)
       const teamData = {
         'Jean Paul Ndayisaba': {
@@ -867,20 +894,20 @@
           ]
         }
       };
-      
+
       // Add click event to team cards
       teamCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
           const name = this.querySelector('h3').textContent;
           const memberData = teamData[name];
-          
+
           if (memberData) {
             // Populate modal with team member data
             document.getElementById('modalName').textContent = memberData.name;
             document.getElementById('modalPosition').textContent = memberData.position;
             document.getElementById('modalBio').textContent = memberData.bio;
             document.getElementById('modalBackground').textContent = memberData.background;
-            
+
             // Populate education list
             const educationList = document.getElementById('modalEducation');
             educationList.innerHTML = '';
@@ -889,7 +916,7 @@
               li.textContent = item;
               educationList.appendChild(li);
             });
-            
+
             // Populate expertise list
             const expertiseList = document.getElementById('modalExpertise');
             expertiseList.innerHTML = '';
@@ -898,30 +925,30 @@
               li.textContent = item;
               expertiseList.appendChild(li);
             });
-            
+
             // Show modal
             teamModal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent scrolling
           }
         });
       });
-      
+
       // Close modal when close button is clicked
-      modalClose.addEventListener('click', function() {
+      modalClose.addEventListener('click', function () {
         teamModal.style.display = 'none';
         document.body.style.overflow = 'auto'; // Restore scrolling
       });
-      
+
       // Close modal when clicking outside the content
-      teamModal.addEventListener('click', function(e) {
+      teamModal.addEventListener('click', function (e) {
         if (e.target === teamModal) {
           teamModal.style.display = 'none';
           document.body.style.overflow = 'auto'; // Restore scrolling
         }
       });
-      
+
       // Close modal with Escape key
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && teamModal.style.display === 'flex') {
           teamModal.style.display = 'none';
           document.body.style.overflow = 'auto'; // Restore scrolling
@@ -930,4 +957,5 @@
     });
   </script>
 </body>
+
 </html>
