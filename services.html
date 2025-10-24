@@ -1,1493 +1,756 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAPITAL FINANCIAL | Accessible Financial Solutions in Rwanda</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="logo.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Services by Pearl Capital Ltd — Explore our tailored micro-lending solutions for SMEs, salaried persons, and farmers in Rwanda. Transparent pricing and flexible terms." />
+    <title>Our Services | Pearl Capital Ltd</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- JS (deferred) -->
+    <script defer src="js/script.js"></script>
+
     <style>
-        /* CSS Variables for consistent theming */
-        :root {
-            --primary: #1a5276;
-            --secondary: #2e86c1;
-            --accent: #f39c12;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-            --success: #28a745;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --radius: 12px;
+        /* SERVICES PAGE SPECIFIC STYLES */
+
+        .services-hero {
+            background: linear-gradient(135deg, rgba(0, 86, 163, 0.92), rgba(26, 43, 60, 0.88)),
+                url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 100px 0 80px;
+            text-align: center;
         }
 
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        h1, h2, h3, h4 {
-            margin-bottom: 20px;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 3.5rem;
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
-        h2 {
-            font-size: 2.5rem;
-        }
-
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            text-align: center;
-            font-size: 1.1rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: rgba(255,255,255,0.2);
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .btn:hover:before {
-            width: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: var(--gradient);
-            margin: 20px auto 0;
-            border-radius: 10px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            color: var(--dark);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-        }
-
-        header.scrolled {
-            padding: 10px 0;
-            background-color: rgba(255, 255, 255, 0.98);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            transition: var(--transition);
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .logo i {
-            margin-right: 10px;
-            font-size: 32px;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--accent);
-            transition: var(--transition);
-            border-radius: 10px;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(26, 82, 118, 0.9) 0%, rgba(46, 134, 193, 0.9) 100%), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-            padding: 200px 0 150px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
+        .services-hero .lead {
             font-size: 1.3rem;
-            margin: 0 auto 40px;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
-        .hero-btns {
+        .services-nav {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 72px;
+            z-index: 99;
+        }
+
+        .services-nav-inner {
             display: flex;
             justify-content: center;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .hero .btn {
-            padding: 18px 40px;
-            font-size: 1.2rem;
+        .service-nav-link {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: #f8fafc;
+            color: var(--muted);
+            font-weight: 600;
+            transition: all 0.3s;
         }
 
-        /* Stats Section */
-        .stats {
-            background: var(--gradient);
-            color: white;
+        .service-nav-link:hover,
+        .service-nav-link.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .service-section {
             padding: 80px 0;
-            position: relative;
         }
 
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        .service-section:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .service-header {
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
         }
 
-        .stat-item {
-            padding: 20px;
-            flex: 1;
-            min-width: 200px;
-            position: relative;
-        }
-
-        .stat-item:not(:last-child):after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 60px;
-            width: 2px;
-            background: rgba(255,255,255,0.3);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: var(--accent);
-        }
-
-        .stat-text {
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-
-        /* Features Section */
-        .features {
-            background-color: white;
-            position: relative;
-        }
-
-        .features-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background-color: var(--light);
-            padding: 40px 30px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-            border-top: 5px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover:before {
-            transform: scaleX(1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .feature-icon {
-            font-size: 60px;
+        .service-header h2 {
             color: var(--primary);
-            margin-bottom: 25px;
-            display: inline-block;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        /* Services Section */
-        .services {
-            background-color: #f0f3f5;
-            position: relative;
+        .service-header .lead {
+            font-size: 1.2rem;
+            color: var(--muted);
         }
 
-        .services-container {
+        .service-detail {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
-        .service-card {
-            background-color: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-
-        .service-img {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 30px;
-            position: relative;
-        }
-
-        .service-icon {
-            font-size: 40px;
-            color: var(--accent);
-            margin-bottom: 20px;
-            display: inline-block;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .service-content h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-features {
-            list-style: none;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .service-features li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .service-features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Process Section */
-        .process {
-            background-color: white;
-            position: relative;
-        }
-
-        .process-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            position: relative;
-        }
-
-        .process-step {
-            flex: 1;
-            min-width: 250px;
-            max-width: 280px;
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 32px;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
-            box-shadow: var(--shadow);
-        }
-
-        .step-content {
-            background-color: var(--light);
-            padding: 35px 20px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-content:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .step-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: inline-block;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background: var(--gradient);
-            color: white;
-            position: relative;
-        }
-
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px 30px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 20px;
-            border: 3px solid rgba(255,255,255,0.3);
-        }
-
-        .author-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            margin-bottom: 5px;
-            color: white;
-        }
-
-        .author-info p {
-            margin-bottom: 0;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-        }
-
-        .quote-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 40px;
-            color: rgba(255,255,255,0.2);
-        }
-
-        /* Team Section */
-        .team {
-            background-color: #f0f3f5;
-            position: relative;
-        }
-
-        .team-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
-        .team-member {
-            background-color: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-        }
-
-        .team-member:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-
-        .member-img {
-            height: 300px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .member-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .team-member:hover .member-img img {
-            transform: scale(1.1);
-        }
-
-        .member-info {
-            padding: 30px 20px;
-        }
-
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--light);
-            border-radius: 50%;
-            color: var(--primary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-5px);
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: white;
-            position: relative;
-        }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-details {
-            margin-top: 40px;
-        }
-
-        .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 30px;
-        }
-
-        .contact-icon {
-            background: var(--gradient);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            font-size: 24px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background-color: var(--light);
-            padding: 40px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: var(--radius);
-            font-size: 16px;
-            transition: var(--transition);
-            background: white;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 80px 0 30px;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 25px;
-            color: white;
-        }
-
-        .footer-logo span {
-            color: var(--accent);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
             margin-bottom: 15px;
         }
 
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .footer-links a:hover {
+        .service-features i {
             color: var(--accent);
-            transform: translateX(5px);
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
         }
 
-        .social-links {
+        .service-pricing {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+        }
+
+        .service-pricing h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
             display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-top: 25px;
         }
 
-        .footer-social {
+        .pricing-item {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
         }
 
-        .footer-social:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
+        .pricing-item:last-child {
+            border-bottom: none;
         }
 
-        .copyright {
+        .service-media {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .service-cta {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 16px;
-            color: #aaa;
+            margin-top: 40px;
         }
 
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
-            color: white;
+        .comparison-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc, #eef4fb);
+        }
+
+        .comparison-table {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+
+        .table-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+            font-weight: 600;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .feature-highlights {
+            padding: 80px 0;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .highlight-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-            font-size: 24px;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
         }
 
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
+        .highlight-card h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .faq-services {
+            padding: 80px 0;
+            background: #f8fafc;
         }
 
-        /* Responsive Design */
+        .faq-services .faq-grid {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 992px) {
-            h1 {
-                font-size: 3rem;
+            .service-detail {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-            
-            h2 {
-                font-size: 2.2rem;
+
+            .service-media {
+                order: -1;
             }
-            
-            .hero {
-                padding: 180px 0 120px;
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .stat-item:after {
-                display: none;
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .table-header div:not(:first-child),
+            .table-row div:not(:first-child) {
+                border-top: 1px solid #eee;
+                padding-top: 10px;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                border-top: 1px solid #eee;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 10px 0;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            h1 {
+            .services-hero h1 {
                 font-size: 2.5rem;
             }
 
-            h2 {
+            .services-hero .lead {
+                font-size: 1.1rem;
+            }
+
+            .service-header h2 {
                 font-size: 2rem;
             }
 
-            section {
-                padding: 80px 0;
+            .highlights-grid {
+                grid-template-columns: 1fr;
             }
 
-            .hero-btns {
+            .services-nav-inner {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .hero-btns .btn {
+            .service-nav-link {
                 width: 100%;
-                max-width: 300px;
+                text-align: center;
             }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-        }
-
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    CAPITAL <span>FINANCIAL</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Why Choose Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn btn-primary">Apply Now</a></li>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Pearl Capital home">
+                <img src="logo.png" alt="logo.png" width="65">
+                <span class="brand-text">Pearl <strong>Capital Ltd</strong></span>
+
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><i
+                        class="fas fa-bars"></i></button>
+                <ul class="nav-list" role="menubar">
+                    <li role="none"><a role="menuitem" class="nav-link" href="index.html">Home</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="about.html">About</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link active" href="services.html">Services</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="ourteam.html">Our Team</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
+                    <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="loan.pdf"
+                            target="_blank">Loan application requirements</a>
+                    </li>
                 </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- Services Hero -->
+    <section class="services-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 data-aos="fade-up">Financial Freedom For All Rwandans</h1>
-                <p data-aos="fade-up" data-aos-delay="200">We're committed to making finance accessible to individuals, businesses and communities often overlooked by the conventional financial system.</p>
-                <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
-                    <a href="#contact" class="btn">Apply For Loan</a>
-                    <a href="#services" class="btn btn-outline">Our Services</a>
+            <h1>Tailored Financial Solutions for Rwanda</h1>
+            <p class="lead">Discover our range of micro-lending products designed to meet the unique needs of SMEs,
+                salaried individuals, and farmers across Rwanda.</p>
+        </div>
+    </section>
+
+    <!-- Services Navigation -->
+    <section class="services-nav">
+        <div class="container services-nav-inner">
+            <a href="#sme" class="service-nav-link active">SME Financing</a>
+            <a href="#salaried" class="service-nav-link">Salaried Person Loans</a>
+            <a href="#agri" class="service-nav-link">Agricultural Finance</a>
+            <a class="btn btn-primary" href="service.pdf" target="_blank">Get Services charter Document</a>
+            
+        </div>
+    </section>
+
+    <!-- SME Financing -->
+    <section class="service-section" id="sme">
+        <div class="container">
+            <div class="service-header">
+                <h2>SME Financing</h2>
+                <p class="lead">Fuel your business growth with working capital and expansion loans tailored to your
+                    enterprise needs.</p>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-content">
+                    <h3>Empowering Small and Medium Enterprises</h3>
+                    <p>Our SME financing solutions are designed to help businesses at various stages of growth access
+                        the capital they need to expand operations, purchase equipment, manage cash flow, and seize new
+                        market opportunities.</p>
+
+                        <div class="service-features">
+                            <h4>Key Benefits:</h4>
+                            <table style="border: none;" width: 100%;">
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Flexible loan amounts</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">RWF 1,000,000 to RWF 50,000,000</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Fast approval process</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">with minimal documentation</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Top-up options</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">for existing clients with good repayment history</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    <div class="service-cta">
+                        <a class="btn btn-primary" href="loan.pdf" target="_blank">Loan requirements</a>
+                        <a class="btn btn-outline" href="contact.html">Speak to Advisor</a>
+                    </div>
+                </div>
+
+                <div class="service-media">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+                        alt="SME Business Growth">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Salaried Person Loans -->
+    <section class="service-section" id="salaried">
         <div class="container">
-            <div class="stats-container">
-                <div class="stat-item" data-aos="fade-up">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-text">Years of Experience</div>
+            <div class="service-header">
+                <h2>Salaried Person Loans</h2>
+                <p class="lead">Access personal loans with favorable terms based on your employment and income
+                    stability.</p>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-media">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80"
+                        alt="Salaried Professional">
                 </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-number">5,000+</div>
-                    <div class="stat-text">Clients Served</div>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-number">$50M+</div>
-                    <div class="stat-text">Loans Disbursed</div>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-text">Customer Satisfaction</div>
+
+                <div class="service-content">
+                    <h3>Financial Solutions for Employed Individuals</h3>
+                    <p>Whether you need funds for education, home improvement, medical expenses, or other personal
+                        needs, our salaried person loans offer competitive rates with repayment schedules aligned to
+                        your pay cycle.</p>
+
+                        <div class="service-features">
+                            <h4>Eligibility & Features:</h4>
+                            <table style="border: none;">
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Loan amounts</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">from RWF 1,000,000 to RWF 10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Repayment periods</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">from 3 to 18 months</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Payroll deduction option</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">for convenient repayment</td>
+                                </tr>
+                            </table>
+                        </div>
+                    <div class="service-cta">
+                        <a class="btn btn-primary" href="loan.pdf" target="_blank">Loan requirements </a>
+                        <a class="btn btn-outline" href="contact.html">Check Eligibility</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Agricultural Finance -->
+    <section class="service-section" id="agri">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Why Choose CAPITAL FINANCIAL</h2>
-            <div class="features-container">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">
+            <div class="service-header">
+                <h2>Agricultural Finance</h2>
+                <p class="lead">Specialized loans designed to support farmers through every season of the agricultural
+                    cycle.</p>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-content">
+                    <h3>Financing Rwanda's Agricultural Sector</h3>
+                    <p>We understand the unique challenges and opportunities in agriculture. Our agricultural finance
+                        products are tailored to align with planting, growing, and harvesting cycles, providing farmers
+                        with the capital they need when they need it most.</p>
+
+                        <div class="service-features">
+                            <h4>Agricultural Solutions:</h4>
+                            <table style="width: 100%; border: none;" >
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Seasonal input loans</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">for seeds, fertilizers, and equipment</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Asset financing</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">for irrigation systems, storage facilities, and machinery</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Harvest advance loans</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">to cover costs before produce sales</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top; padding: 5px 0; width: 30px;"><i class="fas fa-check-circle"></i></td>
+                                    <td style="vertical-align: top; padding: 5px 0; font-weight: bold;">Flexible repayment</td>
+                                    <td style="vertical-align: top; padding: 5px 0; padding-left: 20px;">aligned with harvest cycles</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    <div class="service-cta">
+                        <a class="btn btn-primary" href="contact.html">Apply for Agri Loan</a>
+                        <a class="btn btn-outline" href="contact.html">Learn About Seasons</a>
+                    </div>
+                </div>
+
+                <div class="service-media">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+                        alt="Agricultural Finance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="feature-highlights" id="features">
+        <div class="container">
+            <div class="service-header">
+                <h2>Why Choose Pearl Capital?</h2>
+                <p class="lead">We go beyond lending to provide comprehensive support for your financial journey.</p>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h4>Personalized Service</h4>
+                    <p>Dedicated loan officers who understand your unique needs and provide tailored solutions.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4>Transparent Pricing</h4>
+                    <p>No hidden fees. Clear interest rates and charges disclosed upfront before you commit.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <h3>Quick Approval</h3>
-                    <p>Our streamlined process ensures you get a decision on your loan application within 48 hours, not weeks.</p>
+                    <h4>Fast Processing</h4>
+                    <p>Quick approval and disbursement to ensure you get funds when you need them most.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-hands-helping"></i>
                     </div>
-                    <h3>Community Focused</h3>
-                    <p>We understand the unique financial needs of Rwandans and design our products specifically for our community.</p>
+                    <h4>Business Lending</h4>
+                    <p>Expert guidance on financial management, cash flow planning, and business growth strategies.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-shield"></i>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Trust & Security</h3>
-                    <p>As a registered NDFSP, we operate with full transparency and adhere to the highest security standards.</p>
+                    <h4>Responsible Lending</h4>
+                    <p>We assess affordability to ensure loans don't overburden our clients financially.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h4>Flexible Repayment</h4>
+                    <p>Customized repayment schedules that align with your income patterns and cash flow.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Our Financial Solutions</h2>
-            <div class="services-container">
-                <div class="service-card" data-aos="fade-up">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Personal Loans">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h3>Personal Loans</h3>
-                        <p>Flexible personal loans designed to meet your individual needs, whether for education, home improvement, medical expenses, or debt consolidation.</p>
-                        <ul class="service-features">
-                            <li>Loan amounts from RWF 500,000 to RWF 10,000,000</li>
-                            <li>Flexible repayment terms from 6 to 60 months</li>
-                            <li>Competitive interest rates</li>
-                            <li>No hidden fees</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business Loans">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3>Business Loans</h3>
-                        <p>Tailored financing solutions for businesses of all sizes, from startups to established enterprises, to support growth and operational needs.</p>
-                        <ul class="service-features">
-                            <li>Working capital financing</li>
-                            <li>Equipment and asset financing</li>
-                            <li>Business expansion loans</li>
-                            <li>Invoice financing solutions</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Community Financing">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <h3>Community Financing</h3>
-                        <p>Specialized financial products designed to support community projects, local initiatives, and underserved populations.</p>
-                        <ul class="service-features">
-                            <li>Agricultural financing</li>
-                            <li>Women entrepreneurship loans</li>
-                            <li>Youth business startup funding</li>
-                            <li>Cooperative financing</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
+    <!-- CTA Section -->
+    <section class="section cta-large" aria-labelledby="cta">
+        <div class="container" data-anim="slide-up">
+            <h2 id="cta">Ready to Access Financing?</h2>
+            <p class="muted">Start your application today and take the next step toward achieving your financial goals.
+            </p>
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="contact.html">Loan application requirements </a>
+                <a class="btn btn-outline" href="service.pdf" target="_blank">Get the service charter Document</a>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process" id="process">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Our Simple 4-Step Process</h2>
-            <div class="process-steps">
-                <div class="process-step" data-aos="fade-up">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <h3>Application</h3>
-                        <p>Submit your loan application online or visit our office. Our team will guide you through the requirements.</p>
-                    </div>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Review</h3>
-                        <p>Our team reviews your application, verifies documents, and conducts a credit assessment.</p>
-                    </div>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Approval</h3>
-                        <p>Receive loan approval with customized terms and conditions tailored to your needs.</p>
-                    </div>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-money-bill-wave"></i>
-                        </div>
-                        <h3>Disbursement</h3>
-                        <p>Get your funds quickly transferred to your account so you can achieve your goals.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- PROFESSIONAL FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col about">
+                <a class="brand" href="index.html">Pearl <strong>Capital</strong></a>
+                <p style="font-weight: 100;">Pearl Capital Ltd is committed to providing innovative, affordable and
+                    tailored financial products and services to create positive social impact in Rwanda.</p>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
-            <div class="testimonials-container">
-                <div class="testimonial-card" data-aos="fade-up">
-                    <div class="quote-icon">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-text">
-                        "CAPITAL FINANCIAL helped me expand my grocery store when no traditional bank would consider my application. Their understanding of small business needs in Rwanda is exceptional."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie Uwase">
-                        </div>
-                        <div class="author-info">
-                            <h4>Marie Uwase</h4>
-                            <p>Small Business Owner, Kigali</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="quote-icon">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-text">
-                        "The agricultural loan I received transformed my farming operations. I went from subsistence farming to commercial production, thanks to CAPITAL FINANCIAL's support."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean Bosco">
-                        </div>
-                        <div class="author-info">
-                            <h4>Jean Bosco</h4>
-                            <p>Farmer, Northern Province</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="quote-icon">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-text">
-                        "As a young entrepreneur, finding startup capital was my biggest challenge. CAPITAL FINANCIAL believed in my vision and provided the funding I needed to launch my tech company."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ange Ingabire">
-                        </div>
-                        <div class="author-info">
-                            <h4>Ange Ingabire</h4>
-                            <p>Tech Startup Founder</p>
-                        </div>
-                    </div>
+                <div class="contact-mini">
+                    <p><i class="fas fa-map-marker-alt"></i> 4th Floor, TCB Building wing B, KN 70, Nyarugenge, Kigali
+                    </p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+250788123456">+250 786 962 532</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@pearlcapital.rw">info@pearlcapital.rw</a>
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Meet Our Leadership Team</h2>
-            <div class="team-container">
-                <div class="team-member" data-aos="fade-up">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Jean de Dieu Uwimana">
-                    </div>
-                    <div class="member-info">
-                        <h3>Jean de Dieu Uwimana</h3>
-                        <p>Chief Executive Officer</p>
-                        <p>With over 20 years in financial services, Jean de Dieu leads our vision of inclusive finance for all Rwandans.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Marie Claire Mukamana">
-                    </div>
-                    <div class="member-info">
-                        <h3>Marie Claire Mukamana</h3>
-                        <p>Chief Operations Officer</p>
-                        <p>Marie Claire ensures our operations run smoothly and clients receive exceptional, personalized service.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Eric Nshuti">
-                    </div>
-                    <div class="member-info">
-                        <h3>Eric Nshuti</h3>
-                        <p>Head of Risk Management</p>
-                        <p>Eric oversees our risk assessment processes to ensure responsible lending practices that protect both clients and our institution.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-col links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ourteam.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                    <li><a href="tarif.pdf" target="_blank">Get Tariff Documents</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info" data-aos="fade-right">
-                    <h3>Start Your Financial Journey</h3>
-                    <p>We're here to help you achieve your financial goals. Reach out to us with any questions or to start your loan application process.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>0798815491 / 0788421599</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>capitalfinancialltd@groups.outlook.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Office Location</h4>
-                                <p>Kigali, Rwanda</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4>Business Hours</h4>
-                                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-                                <p>Saturday: 9:00 AM - 1:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form" data-aos="fade-left">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Select a service</option>
-                                <option value="personal">Personal Loan</option>
-                                <option value="business">Business Loan</option>
-                                <option value="community">Community Financing</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your financial needs" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="footer-col services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="services.html#sme">SME Financing</a></li>
+                    <li><a href="services.html#salaried">Salaried Loans</a></li>
+                    <li><a href="services.html#agri">Agricultural Finance</a></li>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-logo">CAPITAL <span>FINANCIAL</span></div>
-                    <p>Making finance accessible to individuals, businesses and communities often overlooked by the conventional financial system.</p>
-                    <div class="social-links">
-                        <a href="#" class="footer-social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-social"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="footer-social"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Why Choose Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#process">Application Process</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Personal Loans</a></li>
-                        <li><a href="#">Business Loans</a></li>
-                        <li><a href="#">Community Financing</a></li>
-                        <li><a href="#">Agricultural Loans</a></li>
-                        <li><a href="#">Youth Entrepreneurship</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Compliance</a></li>
-                        <li><a href="#">Disclosures</a></li>
-                    </ul>
+                </ul>
+                <div class="social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 CAPITAL FINANCIAL Limited. All Rights Reserved. | Registered Non-Deposit Taking Financial Service Provider (NDFSP)</p>
+
+            <div class="footer-col links">
+                <h4>External Links</h4>
+                <ul>
+                    <li><a href="https://www.bnr.rw/" target="_blank">National Bank of Rwanda (BNR)</a></li>
+                    <li><a href="https://www.rra.gov.rw/en/home" target="_blank">Rwanda Revenue Authority (RRA)</a></li>
+                    <li><a href="https://rdb.rw/" target="_blank">Rwanda Development Board (RDB)</a></li>
+
+                </ul>
+            </div>
+
+
+
+
+
+        </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="row">
+                <p>&copy; 2025 Pearl Capital Ltd. All Rights Reserved. | Designed for Rwanda's Growth</p>
+                <small class="muted">Registered: October 2023 — P.O. BOX 4705, Kigali</small>
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+        // Services page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for service navigation
+            const serviceNavLinks = document.querySelectorAll('.service-nav-link');
 
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+            serviceNavLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+                    // Remove active class from all links
+                    serviceNavLinks.forEach(l => l.classList.remove('active'));
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
+                    // Add active class to clicked link
+                    this.classList.add('active');
+
+                    // Get target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Calculate offset for sticky header
+                        const headerHeight = document.querySelector('.site-header').offsetHeight;
+                        const navHeight = document.querySelector('.services-nav').offsetHeight;
+                        const offset = headerHeight + navHeight + 20;
+
+                        // Scroll to section with offset
+                        window.scrollTo({
+                            top: targetSection.offsetTop - offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Update active nav link on scroll
+            window.addEventListener('scroll', function () {
+                const sections = document.querySelectorAll('.service-section, .comparison-section, .feature-highlights, .faq-services');
+                const navLinks = document.querySelectorAll('.service-nav-link');
+
+                let currentSection = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const headerHeight = document.querySelector('.site-header').offsetHeight;
+                    const navHeight = document.querySelector('.services-nav').offsetHeight;
+                    const offset = headerHeight + navHeight + 100;
+
+                    if (window.scrollY >= (sectionTop - offset)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // If at top of page, activate first link
+                if (window.scrollY < 100) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector('.service-nav-link[href="#sme"]').classList.add('active');
                 }
             });
         });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-
-        // Back to top button
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
-            }
-        });
-
-        // Fade in elements on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = function() {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', fadeInOnScroll);
-        // Initial check
-        fadeInOnScroll();
     </script>
 </body>
+
 </html>
