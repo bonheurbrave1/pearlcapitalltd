@@ -108,22 +108,29 @@
     }
 
     .team-img {
-      height: 280px;
-      background: #e9ecef;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
+  width: 160px;              /* adjust as needed (150–200px works well) */
+  height: 160px;
+  border-radius: 50%;        /* makes it a perfect circle */
+  overflow: hidden;          /* hides anything outside the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5; /* light neutral background if image has transparency */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+  margin: 0 auto;            /* centers the profile image container */
+}
 
-    .team-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* fills the circle without distortion */
+  border-radius: 50%;
+  transition: transform 0.3s ease; /* smooth hover animation */
+}
+
+.team-img img:hover {
+  transform: scale(1.05);    /* gentle zoom on hover */
+}
 
     .team-info {
       padding: 25px;
@@ -133,10 +140,12 @@
       margin: 0 0 5px;
       color: var(--primary);
       font-size: 1.3rem;
+      text-align: center;
     }
 
     .team-position {
       color: var(--accent);
+      text-align: center;
       font-weight: 600;
       margin-bottom: 10px;
       display: block;
@@ -569,29 +578,33 @@
 </head>
 
 <body>
-  
-    <!-- Header -->
-    <header class="site-header">
-      <div class="container header-inner">
-          <a class="brand" href="index.html" aria-label="Pearl Capital home">
-              <img src="logo.png" alt="logo.png" width="65">
-              <span class="brand-text">Pearl <strong>Capital Ltd</strong></span>
-          </a>
 
-          <nav class="main-nav" aria-label="Main navigation">
-              <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><i
-                      class="fas fa-bars"></i></button>
-              <ul class="nav-list" role="menubar">
-                  <li role="none"><a role="menuitem" class="nav-link" href="index.html">Home</a></li>
-                  <li role="none"><a role="menuitem" class="nav-link" href="about.html">About</a></li>
-                  <li role="none"><a role="menuitem" class="nav-link" href="services.html">Services</a></li>
-                  <li role="none"><a role="menuitem" class="nav-link active" href="ourteam.html">Our Team</a></li>
-                  <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
-                  <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="loan.pdf"
-                          target="_blank">Loan application requirements</a></li>
-              </ul>
-          </nav>
-      </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Pearl Capital home">
+        <img src="logo.png" alt="logo.png" width="65">
+        <span class="brand-text">Pearl <strong>Capital Ltd</strong></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+        <ul class="nav-list" role="menubar">
+          <li role="none"><a role="menuitem" class="nav-link" href="index.html">Home</a></li>
+          <li role="none"><a role="menuitem" class="nav-link" href="about.html">About</a></li>
+          <li role="none"><a role="menuitem" class="nav-link" href="services.html">Services</a></li>
+          <li role="none"><a role="menuitem" class="nav-link active" href="ourteam.html">Our Team</a></li>
+          <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
+          <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="loan.pdf" target="_blank">Loan
+              application requirements</a></li>
+          <li role="none">
+            <a role="menuitem" class="nav-link active" href="https://pearlcapital.rw/webmail" target="_blank">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- Team Hero -->
@@ -690,22 +703,26 @@
     <div class="container">
       <div class="fullscreen-card">
         <div class="fullscreen-img">
-          <i class="fas fa-user-tie"></i>
+          <img src="gatabazi.jpeg" alt="">
         </div>
         <div class="fullscreen-content">
           <h2>Dr. Gatabazi Emmanuel Thomas</h2>
           <span class="fullscreen-position">Managing Director</span>
           <div class="fullscreen-bio">
-            <p class="team-bio">Dr. Emmanuel Thomas Gatabazi is a seasoned, high profile Finance and Banking professional, with a vast
+            <p class="team-bio">Dr. Emmanuel Thomas Gatabazi is a seasoned, high profile Finance and Banking
+              professional, with a vast
               knowledge of financial management, institutions and banking.</p>
-            <p class="team-bio">He is a former Executive in charge of Rwanda Public Financial Management (PFM) reforms and PFM Trust Fund
+            <p class="team-bio">He is a former Executive in charge of Rwanda Public Financial Management (PFM) reforms
+              and PFM Trust Fund
               with donor contribution from the World Bank, EU and DFID and later on oversaw the PFM basket fund that was
               established by PFM Donor Group. He was responsible for the coordination of all PFM reforms across the
               country including fund raising for and managing the activities under the PFM trust fund.</p>
-            <p class="team-bio">For the past 25 years he has held a variety of positions including lecturer, director of finance,
+            <p class="team-bio">For the past 25 years he has held a variety of positions including lecturer, director of
+              finance,
               accountant general supervising two directorates, public accounts and national treasury, vice-rector in
               charge of administration and finance of a Government University and as a Senior Bank official.</p>
-            <p class="team-bio">Dr Gatabazi got his PhD from the University of Fort Hare, his thesis investigated why SMEs don't get
+            <p class="team-bio">Dr Gatabazi got his PhD from the University of Fort Hare, his thesis investigated why
+              SMEs don't get
               adequate bank financing and has an MBA specialising in Finance, he holds a certification in Financial
               Programming and Policies, Corporate Governance, Risk management and Financial Modelling.</p>
           </div>
@@ -724,49 +741,49 @@
   <section class="team-section" id="leadership">
     <div class="container" style="display: flex; justify-content: space-between;">
 
-        <div class="team-card" style="width: 45%;">
-          <div class="team-img">
-            <i class="fas fa-user-tie"></i>
-          </div>
-          <div class="team-info">
-            <h3>Aaron IRERA </h3>
-            <span class="team-position">Accountant</span>
-            <p class="team-bio">Aaron graduated in 2024 from college of Business and Economics specialized in
-              Accounting.</p>
-            <div class="team-contact">
-              <a href="mailto:mc.uwimana@pearlcapital.rw" aria-label="Email Marie Claire"><i
-                  class="fas fa-envelope"></i></a>
-              <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+      <div class="team-card" style="width: 45%;">
+        <div class="team-img">
+          <img src="aron.jpeg" alt="no internet connection" width="100">
+        </div>
+        <div class="team-info">
+          <h3>Aaron IRERA </h3>
+          <span class="team-position">Accountant</span>
+          <p class="team-bio">Aaron graduated in 2024 from college of Business and Economics specialized in
+            Accounting.</p>
+          <div class="team-contact">
+            <a href="mailto:mc.uwimana@pearlcapital.rw" aria-label="Email Marie Claire"><i
+                class="fas fa-envelope"></i></a>
+            <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
+      </div>
 
-        <div class="team-card" style="width: 45%;">
-          <div class="team-img"> 
-            <i class="fas fa-user-tie"></i>
-          </div>
-          <div class="team-info">
-            <h3>Angelique Kubwimana</h3>
-            <span class="team-position">Loan Officer</span>
-            <p class="team-bio">Kubwimana Angelique is a dedicated Loan Officer with expertise in credit analysis, loan
-              processing, and client relationship management. She holds a Bachelor’s degree in Banking
-              from the University of Rwanda, which has equipped her with a strong foundation in
-              finance, risk management, and customer service. In her role, she specializes in assessing
-              financial capacity, evaluating collateral, and structuring loan agreements that align both
-              client needs and institutional requirements.
-            </p>
-            <div class="team-contact">
-              <a href="mailto:d.habimana@pearlcapital.rw" aria-label="Email David"><i class="fas fa-envelope"></i></a>
-              <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+      <div class="team-card" style="width: 45%;">
+        <div class="team-img">
+          <img src="ange.jpeg" alt="no internet connection">
+        </div>
+        <div class="team-info">
+          <h3>Angelique Kubwimana</h3>
+          <span class="team-position">Loan Officer</span>
+          <p class="team-bio">Kubwimana Angelique is a dedicated Loan Officer with expertise in credit analysis, loan
+            processing, and client relationship management. She holds a Bachelor’s degree in Banking
+            from the University of Rwanda, which has equipped her with a strong foundation in
+            finance, risk management, and customer service. In her role, she specializes in assessing
+            financial capacity, evaluating collateral, and structuring loan agreements that align both
+            client needs and institutional requirements.
+          </p>
+          <div class="team-contact">
+            <a href="mailto:d.habimana@pearlcapital.rw" aria-label="Email David"><i class="fas fa-envelope"></i></a>
+            <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
     </div>
+    </div>
   </section>
 
-  
-  
+
+
   <!-- CTA Section -->
   <section class="section cta-large" aria-labelledby="cta">
     <div class="container" data-anim="slide-up">
@@ -802,7 +819,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="ourteam.html">Our Team</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="services.html#sme">SME Financing</a></li>
+          <li><a href="service.pdf" target="_blank">Service Charter</a></li>
           <li><a href="tarif.pdf" target="_blank">Our Tariff</a></li>
 
         </ul>
