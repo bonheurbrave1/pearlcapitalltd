@@ -638,3 +638,43 @@ a {
 .fasdklfasdf {
   color: rgb(132, 90, 12);
 }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0 0 0;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-toggle .fa-chevron-down {
+  font-size: 0.8em;
+  margin-left: 0.5rem;
+}

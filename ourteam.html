@@ -22,7 +22,45 @@
 
   <style>
     /* OUR TEAM PAGE SPECIFIC STYLES */
+    .dropdown {
+    position: relative;
+}
 
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+}
+
+.dropdown-toggle .fa-chevron-down {
+    font-size: 0.8em;
+    margin-left: 0.5rem;
+}
     .team-hero {
       background: linear-gradient(135deg, rgba(0, 86, 163, 0.92), rgba(26, 43, 60, 0.88)),
         url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
@@ -595,8 +633,16 @@
           <li role="none"><a role="menuitem" class="nav-link" href="services.html">Services</a></li>
           <li role="none"><a role="menuitem" class="nav-link active" href="ourteam.html">Our Team</a></li>
           <li role="none"><a role="menuitem" class="nav-link" href="contact.html">Contact</a></li>
-          <li role="none"><a role="menuitem" class="btn btn-primary nav-cta" href="loan.pdf" target="_blank">Loan
-              application requirements</a></li>
+          <li role="none" class="dropdown">
+            <a role="menuitem" class="btn btn-primary nav-cta dropdown-toggle" href="#" aria-expanded="false">
+                Documentation<i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="loan.pdf" target="_blank">Loan application requirements <a></li>
+                <li><a class="dropdown-item" href="service.pdf" target="_blank">Service Charter</a></li>
+                <li><a class="dropdown-item" href="tarif.pdf" target="_blank">Our Tariff</a></li>
+            </ul>
+        </li>
           <li role="none">
             <a role="menuitem" class="nav-link active" href="https://pearlcapital.rw/webmail" target="_blank">
               <i class="fas fa-envelope"></i> Email
@@ -988,6 +1034,21 @@
         }
       });
     });
+
+    document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    const menu = this.nextElementSibling;
+    menu.classList.toggle('show');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('show');
+        });
+    }
+});
   </script>
 </body>
 
