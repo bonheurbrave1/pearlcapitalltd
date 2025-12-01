@@ -365,7 +365,7 @@
     /* DR. GATABAZI FULL SCREEN SECTION */
     .fullscreen-section {
       min-height: auto;
-      display: flex;
+      display: block;
       align-items: center;
       background: linear-gradient(135deg, #f8fafc 0%, #e9ecef 100%);
       padding: 80px 0;
@@ -384,7 +384,6 @@
     }
 
     .fullscreen-img {
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -612,6 +611,16 @@
         font-size: 1.1rem;
       }
     }
+    .fullscreen-img {
+    margin-bottom: 2rem;
+}
+
+.fullscreen-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
   </style>
 </head>
 
@@ -749,7 +758,7 @@
     <div class="container">
       <div class="fullscreen-card">
         <div class="fullscreen-img">
-          <img src="gatabazi.jpeg" alt="">
+          <img src="gatabazi.jpeg" alt="Dr. Gatabazi Emmanuel Thomas" width="200">
         </div>
         <div class="fullscreen-content">
           <h2>Dr. Gatabazi Emmanuel Thomas</h2>
